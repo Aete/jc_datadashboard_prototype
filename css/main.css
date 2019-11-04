@@ -10,6 +10,7 @@ html{
 
 body{
     max-width: 100vw;
+    font-family: 'Lato', sans-serif;
     height: 100%;
     margin: 0;
 }
@@ -20,13 +21,32 @@ main{
     margin: 0;
 }
 
+nav{
+    display:flex;
+    align-items:flex-start;
+}
 
+nav>#menu{
+    min-width:20%;
+}
 .container{
     width:100%;
     height:100%;
     margin: 0;
 }
 
+#header{
+    color: darkgray;
+    border-bottom : 1px solid  dimgrey;
+}
+
+#dropdown{
+    display:flex;
+}
+
+#region{
+    margin-right: 7px;
+}
 
 #map{
     position: relative;
@@ -39,7 +59,7 @@ main{
 
 #graphs{
     position: absolute;
-    width:20vw;
+    width:450px;
     height:100vh;
     right:0;
     top:0;
@@ -47,18 +67,48 @@ main{
     z-index:3;
     display:flex;
     flex-direction: column;
+    padding-left:10px;
+    padding-right:10px;
 }
 
+#graphs>p{
+
+}
 #graph1{
-    height:30%;
+    height:25%;
+    width: 100%;
+    border-bottom : 1px solid  dimgrey;
+}
+
+#graph1-1{
+    padding: 0 0 12px 0;
+    border-right: 1px solid  dimgrey;
+    width:45%;
+    text-align: center;
+
 }
 
 #graph2{
     height:25%;
+    border-bottom : 1px solid  dimgrey;
 }
 #graph3{
     height:25%;
+    width: 100%;
+
 }
-#test{
-    width:100%;
+#graph1>p{
+    color: darkgray;
+    font-weight:300;
+    margin-top:7px;
+}
+#graph2>p{
+    color: darkgray;
+    font-weight:300;
+    margin-top:7px;
+}
+#graph3>p{
+    color: darkgray;
+    font-weight:300;
+    margin-top:7px;
 }
