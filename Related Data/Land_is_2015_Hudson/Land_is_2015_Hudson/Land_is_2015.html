@@ -1,0 +1,1484 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title>Impervious Surfaces of New Jersey, Edition 20180930 (Rast_impervious_surface)</title>
+  <link rel="schema.dc" href="http://purl.org/metadata/dublin_core"/>
+  <meta name="dc.title" content="Impervious Surfaces of New Jersey, Edition 20180930 (Rast_impervious_surface) "/>
+  <meta name="dc.creator" content="Applied Geographics, Inc. "/>
+  <meta name="dc.subject" content="Impervious Impervious Surfaces Buildings Roads NJDEP New Jersey Rast_impervious_surface Paved Roads "/>
+  <meta name="dc.description" content="Three classes of impervious surfaces--buildings, roads, and other impervious--were mapped for New Jersey through a semi-automated process developed using eCognition software. The automated feature extraction workflow used a Geographic Object-Oriented Image Analysis (GEOBIA) framework to extract the three impervious classes from the source datasets which include digital imagery, LiDAR point clouds and several vector data sets including Land use/land cover, road centerlines and hydrographic features, using a rule-based expert system. "/>
+  <meta name="dc.publisher" content="NJDEP/DOIT/Bureau of GIS"/>
+  <meta name="dc.contributor" content="Applied Geographics, Inc. (AppGeo) along with The University of Vermont Spatial Analysis Lab (UVM SAL) has developed an Object-Based Image Analysis (OBIA) system that mapped impervious surfaces from a combination of remotely-sensed and vector-GIS datasets.  The OBIA system was coupled with a detailed manual-corrections process and a thorough accuracy assessment to generate a statewide impervious surface layer for the State of New Jersey.  NJDEP staff performed QA/QC throrughout the process, and are the party responsible for distributing the data. "/>
+  <meta name="dc.date" content="20180930"/>
+  <meta name="dc.type" content="data.vector digital data"/>
+  <meta name="dc.format" content="DEP distributes ESRI .SHP and/or GDB. Some data may be NJ GeoWeb &quot;display only&quot; layers."/>
+  <meta name="dc.identifier" content="https://www.nj.gov/dep/gis"/>
+  <meta name="dc.source" content="Downloadable Data"/>
+  <meta name="dc.lang" content="en"/>
+  <meta name="dc.coverage.x.min" scheme="DD" content="-75.562661"/>
+  <meta name="dc.coverage.x.max" scheme="DD" content="-73.914848"/>
+  <meta name="dc.coverage.y.min" scheme="DD" content="38.931107"/>
+  <meta name="dc.coverage.y.max" scheme="DD" content="41.35209"/>
+  <meta name="dc.coverage.placeName" content="New Jersey"/>
+  <meta name="dc.coverage.t.min" content="2007"/>
+  <meta name="dc.coverage.t.max" content="2015"/>
+  <meta name="dc.rights" content="Access constraints: None; Use constraints: Users should note that the delineations of impervious surface polygons included in this layer are not to be considered planimetric data. They represent the best available statewide impervious surface mapping that can be used in general land use planning and land use analysis. "/>
+  <meta name="generated-from" content="K:\Impervious_Surface\Metadata\Rast_impervious_surface_fgdc.xml"/>
+</head>
+<body>
+<h1>Impervious Surfaces of New Jersey, Edition 20180930 (Rast_impervious_surface)</h1>
+Metadata also available as<p>
+<h1>Metadata:</h1>
+<ul>
+<li><a href="#1">Identification_Information</a></li>
+<li><a href="#2">Data_Quality_Information</a></li>
+<li><a href="#3">Spatial_Data_Organization_Information</a></li>
+<li><a href="#4">Spatial_Reference_Information</a></li>
+<li><a href="#5">Entity_and_Attribute_Information</a></li>
+<li><a href="#6">Distribution_Information</a></li>
+<li><a href="#7">Metadata_Reference_Information</a></li>
+</ul>
+<a name="1">
+</a>
+<hr/>
+<dl>
+<dt><em>Identification_Information:</em>  
+<dd>
+<dl>
+<dt><em>Citation:</em>  
+<dd>
+<dl>
+<dt><em>Citation_Information:</em>  
+<dd>
+<dl>
+<dt><em>Originator:</em>  Applied Geographics, Inc.</dt>
+<dt><em>Publication_Date:</em>  20180930</dt>
+<dt><em>Title:</em>  
+<dd>
+
+Impervious Surfaces of New Jersey, Edition 20180930 (Rast_impervious_surface)
+
+</dd>
+<dt><em>Geospatial_Data_Presentation_Form:</em>  vector digital data</dt>
+<dt><em>Other_Citation_Details:</em>  
+<dd>
+
+The orignal analysis and data generated were done by Applied Geographics.  The downloadable file geodatabases were assembled by NJDEP/DOIT/BGIS
+
+</dd>
+<dt><em>Online_Linkage:</em>  https://www.nj.gov/dep/gis</dt>
+<dt><em>Online_Linkage:</em>  https://gisdata-njdep.opendata.arcgis.com</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Description:</em>  
+<dd>
+<dl>
+<dt><em>Abstract:</em>  
+<dd>
+
+Three classes of impervious surfaces--buildings, roads, and other impervious--were mapped for New Jersey through a semi-automated process developed using eCognition software. The automated feature extraction workflow used a Geographic Object-Oriented Image Analysis (GEOBIA) framework to extract the three impervious classes from the source datasets which include digital imagery, LiDAR point clouds and several vector data sets including Land use/land cover, road centerlines and hydrographic features, using a rule-based expert system.
+
+</dd>
+<dt><em>Purpose:</em>  
+<dd>
+
+This data set was generated to provide a statewide vector layer of impervious surfaces for New Jersey.
+
+</dd>
+<dt><em>Supplemental_Information:</em>  
+<dd>
+
+The project under which this data set was produced was undertaken to investigate the feasibility of using automated object-based image analysis extraction routines to generate a vector layer of impervious surfaces for New Jersey.  The 2015 leaf-off New Jersey orthorectified imagery served as the primary data source, but the 1-meter leaf-on imagery acquired through the National Agricultural Imagery Program (NAIP) in the summer of 2015 was also used.  Several additional datasets were used to supplement the process.  This includes LiDAR data, which was collected at varying time periods in New Jersey, land use/land cover data, road centerlines, and stream and water body features included in the National Hydrography Dataset (NHD).  Initial feature extraction was carried out in the coordinate system of the LiDAR data (most often UTM).  LiDAR point clouds were normalized and classified to separate out buildings and trees.  Raster surface models and intensity images were generated from the LiDAR point cloud data.  Imagery data were mosaicked, and vector datasets were examined for completeness, accuracy, and topology.  Initial analysis was done using eCognition software, with QA/QC and some final data edits done using ArcGIS 10.5.1.  Applied Geographics was the primary contractor on the project, with the Spatial Analysis Lab of the University of Vermont serving as a sub-contractor.  NJDEP staff were involved in the development of the mapping criteria as well as in the QA/QC of intermediate and final data sets.
+
+</dd>
+</dl>
+</dd>
+<dt><em>Time_Period_of_Content:</em>  
+<dd>
+<dl>
+<dt><em>Currentness_Reference:</em>  Ground condition</dt>
+<dt><em>Time_Period_Information:</em>  
+<dd>
+<dl>
+<dt><em>Range_of_Dates/Times:</em>  
+<dd>
+<dl>
+<dt><em>Beginning_Date:</em>  2007</dt>
+<dt><em>Ending_Date:</em>  2015</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Status:</em>  
+<dd>
+<dl>
+<dt><em>Progress:</em>  Complete</dt>
+<dt><em>Maintenance_and_Update_Frequency:</em>  Unknown</dt>
+</dl>
+</dd>
+<dt><em>Spatial_Domain:</em>  
+<dd>
+<dl>
+<dt><em>Bounding_Coordinates:</em>  
+<dd>
+<dl>
+<dt><em>West_Bounding_Coordinate:</em>  -75.562661</dt>
+<dt><em>East_Bounding_Coordinate:</em>  -73.914848</dt>
+<dt><em>North_Bounding_Coordinate:</em>  41.35209</dt>
+<dt><em>South_Bounding_Coordinate:</em>  38.931107</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Keywords:</em>  
+<dd>
+<dl>
+<dt><em>Theme:</em>  
+<dd>
+<dl>
+<dt><em>Theme_Keyword:</em>  Impervious</dt>
+<dt><em>Theme_Keyword:</em>  Impervious Surfaces</dt>
+<dt><em>Theme_Keyword:</em>  Buildings</dt>
+<dt><em>Theme_Keyword:</em>  Roads</dt>
+<dt><em>Theme_Keyword:</em>  NJDEP</dt>
+<dt><em>Theme_Keyword:</em>  New Jersey</dt>
+<dt><em>Theme_Keyword:</em>  Rast_impervious_surface</dt>
+<dt><em>Theme_Keyword:</em>  Paved Roads</dt>
+</dl>
+</dd>
+<dt><em>Place:</em>  
+<dd>
+<dl>
+<dt><em>Place_Keyword:</em>  New Jersey</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Access_Constraints:</em>  None</dt>
+<dt><em>Use_Constraints:</em>  
+<dd>
+
+Users should note that the delineations of impervious surface polygons included in this layer are not to be considered planimetric data. They represent the best available statewide impervious surface mapping that can be used in general land use planning and land use analysis. 
+<br/>
+AppGeo makes no representations of any kind, including but not limited to the warranties of merchantability or fitness for a particular use, nor are any such warranties to be implied with respect to the data.Although every effort has been made to assure the accuracy of features and their attributes, AppGeo is not accountable for any errors or misuse of the data. The data should be used for general mapping purposes only.
+<br/>
+New Jersey Department of Environmental Protection (NJDEP) Data Distribution Agreement. 
+The data provided herein are distributed subject to the following conditions and restrictions: NJDEP assumes no responsibility to maintain them in any manner or form and disclaims any duty or obligation to either maintain availability of or to update the data.
+<br/>
+Terms of Agreement
+<br/>
+1. All data is provided, as is, without any representation or warranty of any kind, implied, expressed or statutory including, but not limited to, the warranties of non-infringement of third party rights, title, merchantability or fitness for a particular use, freedom from computer virus nor are any such warranties to be implied with respect to the digital data layers furnished hereunder. User is responsible for understanding the accuracy limitations of all digital data layers provided herein, as documented in the accompanying cross-reference files (see SUPPLEMENTAL INFORMATION). Any reproduction or manipulation of the above data must ensure that the coordinate reference system remains intact.
+<br/>
+2. Digital data received from the NJDEP may not be reproduced or redistributed without all the metadata provided. 
+<br/>
+3. Any maps, publications, reports, or other documents produced as a result of this project that utilize this digital data will credit the NJDEP's Geographic Information System (GIS) as the source of the data with the following credit/disclaimer: &quot;This (map/publication/report) was developed using New Jersey Department of Environmental Protection Geographic Information System digital data, but this secondary product has not been verified by NJDEP and is not state-authorized or endorsed.&quot;
+<br/>
+4. NJDEP makes no warranty that digital data are free of Copyright or Trademark claims or other restrictions or limitations on free use or display. Making a copy of this data may be subject to the copyright of trademark laws.
+
+</dd>
+<dt><em>Data_Set_Credit:</em>  
+<dd>
+
+Applied Geographics, Inc. (AppGeo) along with The University of Vermont Spatial Analysis Lab (UVM SAL) has developed an Object-Based Image Analysis (OBIA) system that mapped impervious surfaces from a combination of remotely-sensed and vector-GIS datasets.  The OBIA system was coupled with a detailed manual-corrections process and a thorough accuracy assessment to generate a statewide impervious surface layer for the State of New Jersey.  NJDEP staff performed QA/QC throrughout the process, and are the party responsible for distributing the data.
+
+</dd>
+<dt><em>Native_Data_Set_Environment:</em>  
+<dd>
+
+Microsoft Windows Vista Version 6.1 (Build 7601) Service Pack 1; ESRI ArcCatalog 9.3.1.3000
+
+</dd>
+<dt><em>Cross_Reference:</em>  
+<dd>
+<dl>
+<dt><em>Citation_Information:</em>  
+<dd>
+<dl>
+<dt><em>Originator:</em>  Applied Geographics, Inc</dt>
+<dt><em>Publication_Date:</em>  20180801</dt>
+<dt><em>Title:</em>  Automated Impervious Surface, Final report</dt>
+<dt><em>Geospatial_Data_Presentation_Form:</em>  text</dt>
+<dt><em>Online_Linkage:</em>  none</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Data_Set_Credit:</em>  
+<dd>
+
+Applied Geographics, Inc. (AppGeo) along with The University of Vermont Spatial Analysis Lab (UVM SAL) has developed an Object-Based Image Analysis (OBIA) system that mapped impervious surfaces from a combination of remotely-sensed and vector-GIS datasets.  The OBIA system was coupled with a detailed manual-corrections process and a thorough accuracy assessment to generate a statewide impervious surface layer for the State of New Jersey.  NJDEP staff performed QA/QC throrughout the process, and are the party responsible for distributing the data.
+
+</dd>
+<dt><em>Native_Data_Set_Environment:</em>  
+<dd>
+
+Microsoft Windows Vista Version 6.1 (Build 7601) Service Pack 1; ESRI ArcCatalog 9.3.1.3000
+
+</dd>
+<dt><em>Cross_Reference:</em>  
+<dd>
+<dl>
+<dt><em>Citation_Information:</em>  
+<dd>
+<dl>
+<dt><em>Originator:</em>  Applied Geographics, Inc</dt>
+<dt><em>Publication_Date:</em>  2018/08/01</dt>
+<dt><em>Title:</em>  Automated Impervious Surface, Final report</dt>
+<dt><em>Geospatial_Data_Presentation_Form:</em>  text</dt>
+<dt><em>Online_Linkage:</em>  none</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Point_of_Contact:</em>  
+<dd>
+<dl>
+<dt><em>Contact_Information:</em>  
+<dd>
+<dl>
+<dt><em>Contact_Person_Primary:</em>  
+<dd>
+<dl>
+<dt><em>Contact_Organization:</em>  Applied Geographics</dt>
+<dt><em>Contact_Person:</em>  Brian Coolidge</dt>
+</dl>
+</dd>
+<dt><em>Contact_Position:</em>  Sr. Project Manager</dt>
+<dt><em>Contact_Address:</em>  
+<dd>
+<dl>
+<dt><em>Address_Type:</em>  mailing and physical address</dt>
+<dt><em>Address:</em>  24 Scholl Street, Suite 500</dt>
+<dt><em>City:</em>  Boston</dt>
+<dt><em>State_or_Province:</em>  MA</dt>
+<dt><em>Postal_Code:</em>  02108</dt>
+</dl>
+</dd>
+<dt><em>Contact_Voice_Telephone:</em>  617-447-2400</dt>
+<dt><em>Contact_Facsimile_Telephone:</em>  none</dt>
+<dt><em>Contact_Electronic_Mail_Address:</em>  bcoolidge@appgeo.com</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+
+<a name="2">
+</a>
+<hr/>
+<dl>
+<dt><em>Data_Quality_Information:</em>  
+<dd>
+<dl>
+<dt><em>Attribute_Accuracy:</em>  
+<dd>
+<dl>
+<dt><em>Attribute_Accuracy_Report:</em>  
+<dd>
+
+An Accuracy Assessment was conducted following manual correction of the impervious surface layer.
+UVM SAL developed an error matrix with producer, user, and overall error metrics by comparing a setof known sample points to corresponding locations in the respective impervious surface. A systematic grid was generated based on the areal extent of the unique classes, thus ensuring that the sample size unit (SSU) will represent all classes. SSU grid size is defined by a threshold derived from the frequency histogram for the area of individual class features. A stratified random point-sampling method was used to assign a sample point to each SSU and to create an even spatial distribution of points over the
+project area. The points was then used to extract the class value from the impervious surface layer. In
+instances where rare classes are covered by sample points that exceed 50% of the SSUs, the selected
+points were omitted and replaced by generating random points at an interval that will cover
+approximately 50% of the SSUs for the class.  The overall accuracy of the mapping was 94%. The user's accuracies for Buildings, Roads, and Other Paved were 94%, 87%, and 84% respectively.
+
+</dd>
+</dl>
+</dd>
+<dt><em>Logical_Consistency_Report:</em>  
+<dd>
+
+Polygon topology exists.  Individual classes were extracted and checked against reference imagery to verify coding accuracy.
+
+</dd>
+<dt><em>Completeness_Report:</em>  Data set is complete</dt>
+<dt><em>Positional_Accuracy:</em>  
+<dd>
+<dl>
+<dt><em>Horizontal_Positional_Accuracy:</em>  
+<dd>
+<dl>
+<dt><em>Horizontal_Positional_Accuracy_Report:</em>  
+<dd>
+
+Horizontal accuracy of the final vector data set has not been evaluated.  The horizontal accurracies of the input data sets can be found in documentation developed for these input data layers, as listed in the Source Information  Section.
+
+</dd>
+</dl>
+</dd>
+<dt><em>Vertical_Positional_Accuracy:</em>  
+<dd>
+<dl>
+<dt><em>Vertical_Positional_Accuracy_Report:</em>  
+<dd>
+
+Vertical accuracy of the final vector data set has not been evaluated.  The horizontal accurracies of the input data sets can be found in documentation developed for these input data layers, as listed in the Cross Reference Section.
+
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Lineage:</em>  
+<dd>
+<dl>
+<dt><em>Process_Step:</em>  
+<dd>
+<dl>
+<dt><em>Process_Description:</em>  
+<dd>
+
+The approach to mapping involved both automated feature extraction techniques and manual editing of impervious surfaces. The impervious surface classes which were mapped are as follows: Structures (buildings), Roads, Other impervious surfaces (e.g. Parking Lots, Sidewalks, patios, driveways, etc.).  The University of Vermont (UVM) Spatial Analysis Lab (SAL) designed, developed, and deployed a Geographic Object-Oriented Image Analysis (OBIA) framework that automatically extracts the impervious classes from the source datasets using a rule-based expert system. The expert system made use of segmentation, classification, and morphology algorithms to group pixels into objects, classify the objects based on the properties of the source datasets, and then refine the objects to enhance aesthetics and improve visual realism.
+A 'bottom up' approach to mapping was carried out in which impervious surface features that are under tree canopy but visible in the leaf-off imagery was mapped. The key advantage of the object-based approach is that the use of the spectral, textural, geometric, and contextual properties in the imagery reduce confusion between impervious land cover features and those that are similar in tone, such sand on the banks of streams.
+The project team worked with DEP staff to identify extents for a pilot project. The pilot project was utilized to refine general GEOBIA processes being run with New Jersey specific data, to ensure that the final statewide dataset would meet the DEP's expectations. The pilot project also helped identify any specific issues related to the data processing in advance, for discussion and resolution with DEP prior to full statewide processing. During the pilot phase, the GEOBIA processes and analysis were developed with the specific New Jersey data, and carried out against the pilot areas.  Upon final approval of the pilot datasets, the project team began statewide processing, utilizing the findings from the pilot project to apply to the statewide processing efforts.
+With the large area of the State of New Jersey, the project team broke the initial processing down by LiDAR project collection areas, of which there were 11.  These areas were processed based on the procedures determined during the pilot project and then delivered to NJ DEP for review. Any issues found during the review period were then revised, and resubmitted to DEP. Upon approval of all areas by DEP, the areas were then combined into one statewide dataset.
+<br/>
+To improve the display of the dataset in GIS applications used within NJDEP, a municipal boundary vector data set was integrated into the IS feature class.   This was done primarily to break up large continuous road polygons into more manageable features.
+
+</dd>
+<dt><em>Process_Contact:</em>  
+<dd>
+<dl>
+<dt><em>Contact_Information:</em>  
+<dd>
+<dl>
+<dt><em>Contact_Person_Primary:</em>  
+<dd>
+<dl>
+<dt><em>Contact_Organization:</em>  Applied Geographics, Inc.</dt>
+<dt><em>Contact_Person:</em>  Brian Coolidge</dt>
+</dl>
+</dd>
+<dt><em>Contact_Position:</em>  Sr. Project Manager</dt>
+<dt><em>Contact_Address:</em>  
+<dd>
+<dl>
+<dt><em>Address_Type:</em>  mailing and physical address</dt>
+<dt><em>Address:</em>  24 School Street</dt>
+<dt><em>City:</em>  Boston</dt>
+<dt><em>State_or_Province:</em>  MA</dt>
+<dt><em>Postal_Code:</em>  02108-5113</dt>
+</dl>
+</dd>
+<dt><em>Contact_Voice_Telephone:</em>  617-447-2400</dt>
+<dt><em>Contact_Facsimile_Telephone:</em>  none</dt>
+<dt><em>Contact_Electronic_Mail_Address:</em>  bcollidge@appgeo.com</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Process_Step:</em>  
+<dd>
+<dl>
+<dt><em>Process_Date:</em>  20181010</dt>
+<dt><em>Process_Description:</em>  
+<dd>
+
+NJDEP Process Step 1:  While the NJ municipal boundary layer was integrated into the final IS feature class as part of the oriingal workflow, no municipal attributes were inlcuded in the final data set.  To make the IS features easier to extract for many operations, BGIS staff performed a spatial join to add the follwing municipal attributes to the data set:  MUN, COUNTY, MUN_LABEL, MUN_TYPE, NAME, GNIS_NAME, GNIS, SSN, MUN_CODE.   An ACRES field was also added and calculated for all features.
+
+</dd>
+<dt><em>Process_Contact:</em>  
+<dd>
+<dl>
+<dt><em>Contact_Information:</em>  
+<dd>
+<dl>
+<dt><em>Contact_Person_Primary:</em>  
+<dd>
+<dl>
+<dt><em>Contact_Organization:</em>  NJDEP/DOIT/BGIS</dt>
+<dt><em>Contact_Person:</em>  John Tyrawski</dt>
+</dl>
+</dd>
+<dt><em>Contact_Position:</em>  Research Scientist</dt>
+<dt><em>Contact_Address:</em>  
+<dd>
+<dl>
+<dt><em>Address_Type:</em>  mailing and physical address</dt>
+<dt><em>Address:</em>  401 East State Street</dt>
+<dt><em>City:</em>  Trenton</dt>
+<dt><em>State_or_Province:</em>  NJ</dt>
+<dt><em>Postal_Code:</em>  08625</dt>
+</dl>
+</dd>
+<dt><em>Contact_Voice_Telephone:</em>  609-777-0672</dt>
+<dt><em>Contact_Facsimile_Telephone:</em>  609-292-7900</dt>
+<dt><em>Contact_Electronic_Mail_Address:</em>  GISNET@dep.nj.gov</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Process_Step:</em>  
+<dd>
+<dl>
+<dt><em>Process_Date:</em>  20181210</dt>
+<dt><em>Process_Description:</em>  
+<dd>
+
+NJDEP Process Step 2: The statewide impervious surface was clipped by county to reduce download size.
+
+</dd>
+<dt><em>Process_Contact:</em>  
+<dd>
+<dl>
+<dt><em>Contact_Information:</em>  
+<dd>
+<dl>
+<dt><em>Contact_Person_Primary:</em>  
+<dd>
+<dl>
+<dt><em>Contact_Organization:</em>  NJDEP/DOIT/BGIS</dt>
+<dt><em>Contact_Person:</em>  John Tyrawski</dt>
+</dl>
+</dd>
+<dt><em>Contact_Position:</em>  Research Scientist</dt>
+<dt><em>Contact_Address:</em>  
+<dd>
+<dl>
+<dt><em>Address_Type:</em>  mailing and physical address</dt>
+<dt><em>Address:</em>  401 East State Street</dt>
+<dt><em>City:</em>  Trenton</dt>
+<dt><em>State_or_Province:</em>  NJ</dt>
+<dt><em>Postal_Code:</em>  08625</dt>
+</dl>
+</dd>
+<dt><em>Contact_Voice_Telephone:</em>  609-777-0672</dt>
+<dt><em>Contact_Facsimile_Telephone:</em>  609-292-7900</dt>
+<dt><em>Contact_Electronic_Mail_Address:</em>  GISNET@dep.nj.gov</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Source_Information:</em>  
+<dd>
+<dl>
+<dt><em>Source_Scale_Denominator:</em>  unknown</dt>
+<dt><em>Type_of_Source_Media:</em>  LAS files</dt>
+<dt><em>Source_Contribution:</em>  LiDAR Point Clouds</dt>
+<dt><em>Source_Citation:</em>  
+<dd>
+<dl>
+<dt><em>Citation_Information:</em>  
+<dd>
+<dl>
+<dt><em>Originator:</em>  FEMA</dt>
+<dt><em>Publication_Date:</em>  20110811</dt>
+<dt><em>Title:</em>  
+<dd>
+
+LiDAR Point Clouds, Atlantic, Ocean, and Monmouth Counties, New Jersey
+
+</dd>
+<dt><em>Geospatial_Data_Presentation_Form:</em>  LiDAR point clouds, LAS files</dt>
+<dt><em>Online_Linkage:</em>  https://nationalmap.gov/elevation.html</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Source_Information:</em>  
+<dd>
+<dl>
+<dt><em>Source_Scale_Denominator:</em>  unknown</dt>
+<dt><em>Type_of_Source_Media:</em>  LAS files</dt>
+<dt><em>Source_Contribution:</em>  LiDAR Point Clouds</dt>
+<dt><em>Source_Citation:</em>  
+<dd>
+<dl>
+<dt><em>Citation_Information:</em>  
+<dd>
+<dl>
+<dt><em>Originator:</em>  USGS</dt>
+<dt><em>Publication_Date:</em>  20090220</dt>
+<dt><em>Title:</em>  
+<dd>
+
+LiDAR Point Clouds, Cape May, Cumberland, and Non-CAFRA Salem County
+
+</dd>
+<dt><em>Geospatial_Data_Presentation_Form:</em>  LiDAR Point Clouds (LAS Files)</dt>
+<dt><em>Online_Linkage:</em>  https://nationalmap.gov/elevation.html</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Source_Information:</em>  
+<dd>
+<dl>
+<dt><em>Source_Scale_Denominator:</em>  unknown</dt>
+<dt><em>Type_of_Source_Media:</em>  LAS files</dt>
+<dt><em>Source_Contribution:</em>  LiDAR Point Clouds</dt>
+<dt><em>Source_Citation:</em>  
+<dd>
+<dl>
+<dt><em>Citation_Information:</em>  
+<dd>
+<dl>
+<dt><em>Originator:</em>  New Jersey Highlands Council</dt>
+<dt><em>Publication_Date:</em>  20080107</dt>
+<dt><em>Title:</em>  LiDAR Point Clouds, Highlands</dt>
+<dt><em>Geospatial_Data_Presentation_Form:</em>  LiDAR Point Clouds, LAS Files</dt>
+<dt><em>Online_Linkage:</em>  https://nationalmap.gov/elevation.html</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Source_Information:</em>  
+<dd>
+<dl>
+<dt><em>Source_Scale_Denominator:</em>  unknown</dt>
+<dt><em>Type_of_Source_Media:</em>  LAS files</dt>
+<dt><em>Source_Contribution:</em>  LiDAR Point Clouds</dt>
+<dt><em>Source_Citation:</em>  
+<dd>
+<dl>
+<dt><em>Citation_Information:</em>  
+<dd>
+<dl>
+<dt><em>Originator:</em>  FEMA</dt>
+<dt><em>Publication_Date:</em>  20070407</dt>
+<dt><em>Title:</em>  LiDAR Point Clouds, LiDAR Point Clouds</dt>
+<dt><em>Geospatial_Data_Presentation_Form:</em>  LIDAR Point Clouds, LAS files</dt>
+<dt><em>Online_Linkage:</em>  https://nationalmap.gov/elevation.html</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Source_Information:</em>  
+<dd>
+<dl>
+<dt><em>Source_Scale_Denominator:</em>  unknown</dt>
+<dt><em>Type_of_Source_Media:</em>  LAS files</dt>
+<dt><em>Source_Contribution:</em>  LIDAR Point Clouds</dt>
+<dt><em>Source_Citation:</em>  
+<dd>
+<dl>
+<dt><em>Citation_Information:</em>  
+<dd>
+<dl>
+<dt><em>Originator:</em>  USGS</dt>
+<dt><em>Publication_Date:</em>  20090811</dt>
+<dt><em>Title:</em>  LIDAR Point Clouds, Salem County (CAFRA Portion),</dt>
+<dt><em>Geospatial_Data_Presentation_Form:</em>  LiDAR Point Clouds, LAS files</dt>
+<dt><em>Online_Linkage:</em>  https://nationalmap.gov/elevation.html</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Source_Information:</em>  
+<dd>
+<dl>
+<dt><em>Source_Scale_Denominator:</em>  unknown</dt>
+<dt><em>Type_of_Source_Media:</em>  LAS files</dt>
+<dt><em>Source_Contribution:</em>  LiDAR Point Clouds</dt>
+<dt><em>Source_Citation:</em>  
+<dd>
+<dl>
+<dt><em>Citation_Information:</em>  
+<dd>
+<dl>
+<dt><em>Originator:</em>  USGS</dt>
+<dt><em>Publication_Date:</em>  20080515</dt>
+<dt><em>Title:</em>  LiDAR Point Clouds, Somerset County</dt>
+<dt><em>Geospatial_Data_Presentation_Form:</em>  LiDAR Point Clouds, LAS files</dt>
+<dt><em>Online_Linkage:</em>  https://nationalmap.gov/elevation.html</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Source_Information:</em>  
+<dd>
+<dl>
+<dt><em>Source_Scale_Denominator:</em>  unknown</dt>
+<dt><em>Type_of_Source_Media:</em>  LAS files</dt>
+<dt><em>Source_Contribution:</em>  LiDAR Point Clouds</dt>
+<dt><em>Source_Citation:</em>  
+<dd>
+<dl>
+<dt><em>Citation_Information:</em>  
+<dd>
+<dl>
+<dt><em>Originator:</em>  USGS</dt>
+<dt><em>Publication_Date:</em>  20130121</dt>
+<dt><em>Title:</em>  LiDAR Point Clouds, Western Sussex/Warren Counties, New Jersey</dt>
+<dt><em>Geospatial_Data_Presentation_Form:</em>  LiDAR Point Clouds, LAS files</dt>
+<dt><em>Other_Citation_Details:</em>  
+<dd>
+
+This data set was originally collected in 2008, and re-processed in 2011 to increase the accuracy of the data set.
+
+</dd>
+<dt><em>Online_Linkage:</em>  https://nationalmap.gov/elevation.html</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Source_Information:</em>  
+<dd>
+<dl>
+<dt><em>Source_Scale_Denominator:</em>  unknown</dt>
+<dt><em>Type_of_Source_Media:</em>  LAS files</dt>
+<dt><em>Source_Contribution:</em>  LiDAR Point Clouds</dt>
+<dt><em>Source_Citation:</em>  
+<dd>
+<dl>
+<dt><em>Citation_Information:</em>  
+<dd>
+<dl>
+<dt><em>Originator:</em>  USGS</dt>
+<dt><em>Publication_Date:</em>  20141001</dt>
+<dt><em>Title:</em>  
+<dd>
+
+LiDAR Point Clouds, Monmouth, Middlesex, Essex,  Union, Hudson, Bergen Counties
+
+</dd>
+<dt><em>Geospatial_Data_Presentation_Form:</em>  LiDAR Point Clouds, LAS files</dt>
+<dt><em>Online_Linkage:</em>  https://nationalmap.gov/elevation.html</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Source_Information:</em>  
+<dd>
+<dl>
+<dt><em>Source_Citation:</em>  
+<dd>
+<dl>
+<dt><em>Citation_Information:</em>  
+<dd>
+<dl>
+<dt><em>Originator:</em>  Delaware Valley Regional Planning Commission</dt>
+<dt><em>Publication_Date:</em>  20150930</dt>
+<dt><em>Title:</em>  
+<dd>
+
+LiDAR Point Clouds, Mercer, Burlington, Camden, Gloucester Counties, New Jersey
+
+</dd>
+<dt><em>Geospatial_Data_Presentation_Form:</em>  LiDAR Point Clouds, LAS files</dt>
+<dt><em>Online_Linkage:</em>  https://nationalmap.gov/elevation.html</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Source_Information:</em>  
+<dd>
+<dl>
+<dt><em>Source_Citation:</em>  
+<dd>
+<dl>
+<dt><em>Citation_Information:</em>  
+<dd>
+<dl>
+<dt><em>Originator:</em>  NOAA</dt>
+<dt><em>Publication_Date:</em>  20160822</dt>
+<dt><em>Title:</em>  LiDAR Point Clouds, Coastal New Jersey</dt>
+<dt><em>Geospatial_Data_Presentation_Form:</em>  LiDAR Point Clouds, LAS files</dt>
+<dt><em>Other_Citation_Details:</em>  
+<dd>
+
+Data collected as part of the2014 NOAA Post-Sandy Topobathymetric LiDAR: South Carolina to New York.
+
+</dd>
+<dt><em>Online_Linkage:</em>  https://nationalmap.gov/elevation.html</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Source_Information:</em>  
+<dd>
+<dl>
+<dt><em>Source_Scale_Denominator:</em>  unknown</dt>
+<dt><em>Type_of_Source_Media:</em>  Digital data</dt>
+<dt><em>Source_Contribution:</em>  Bare earth digital elevation model</dt>
+<dt><em>Source_Citation:</em>  
+<dd>
+<dl>
+<dt><em>Citation_Information:</em>  
+<dd>
+<dl>
+<dt><em>Originator:</em>  USGS</dt>
+<dt><em>Publication_Date:</em>  20070108</dt>
+<dt><em>Title:</em>  Digital Elevation Model, Northeast New Jersey</dt>
+<dt><em>Geospatial_Data_Presentation_Form:</em>  raster digital data</dt>
+<dt><em>Online_Linkage:</em>  https://nationalmap.gov/elevation.html</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Source_Information:</em>  
+<dd>
+<dl>
+<dt><em>Source_Scale_Denominator:</em>  1:2400</dt>
+<dt><em>Type_of_Source_Media:</em>  Digital image files</dt>
+<dt><em>Source_Contribution:</em>  Primary base imagery for OBIA process</dt>
+<dt><em>Source_Time_Period_of_Content:</em>  
+<dd>
+<dl>
+<dt><em>Source_Currentness_Reference:</em>  publication date</dt>
+<dt><em>Time_Period_Information:</em>  
+<dd>
+<dl>
+<dt><em>Single_Date/Time:</em>  
+<dd>
+<dl>
+<dt><em>Calendar_Date:</em>  20150101</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Source_Citation:</em>  
+<dd>
+<dl>
+<dt><em>Citation_Information:</em>  
+<dd>
+<dl>
+<dt><em>Originator:</em>  
+<dd>
+
+NJ Office of Information Technology (NJOIT), Office of Geographic Information Systems (OGIS)
+
+</dd>
+<dt><em>Publication_Date:</em>  20150101</dt>
+<dt><em>Title:</em>  New Jersey 2015 high resolution Orthophotography</dt>
+<dt><em>Geospatial_Data_Presentation_Form:</em>  Digital iamge files</dt>
+<dt><em>Online_Linkage:</em>  
+<dd>
+
+https://njgin.state.nj.us/NJ_NJGINExplorer/jviewer.jsp?pg=2015_OrthoImagery
+
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Source_Information:</em>  
+<dd>
+<dl>
+<dt><em>Source_Scale_Denominator:</em>  1:24000</dt>
+<dt><em>Type_of_Source_Media:</em>  Digital orthophotography</dt>
+<dt><em>Source_Contribution:</em>  Supplemental imagery for OBIA process.</dt>
+<dt><em>Source_Time_Period_of_Content:</em>  
+<dd>
+<dl>
+<dt><em>Source_Currentness_Reference:</em>  ground condition</dt>
+<dt><em>Time_Period_Information:</em>  
+<dd>
+<dl>
+<dt><em>Single_Date/Time:</em>  
+<dd>
+<dl>
+<dt><em>Calendar_Date:</em>  2015</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Source_Citation:</em>  
+<dd>
+<dl>
+<dt><em>Citation_Information:</em>  
+<dd>
+<dl>
+<dt><em>Originator:</em>  United States Department of Agriculture</dt>
+<dt><em>Publication_Date:</em>  20150721</dt>
+<dt><em>Title:</em>  
+<dd>
+
+2015 Digital Ortho Mosiac, National Agriculture Imagery Program, (NAIP)
+
+</dd>
+<dt><em>Geospatial_Data_Presentation_Form:</em>  Digital image files</dt>
+<dt><em>Online_Linkage:</em>  https://datagateway.nrcs.usda.gov/GDGHome_DirectDownLoad.aspx</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Source_Information:</em>  
+<dd>
+<dl>
+<dt><em>Source_Scale_Denominator:</em>  unknown</dt>
+<dt><em>Type_of_Source_Media:</em>  digital data</dt>
+<dt><em>Source_Contribution:</em>  Supplemental road network</dt>
+<dt><em>Source_Citation:</em>  
+<dd>
+<dl>
+<dt><em>Citation_Information:</em>  
+<dd>
+<dl>
+<dt><em>Originator:</em>  
+<dd>
+
+NJ Office of Information Technology (NJOIT), Office of Geographic Information Systems (OGIS)
+
+</dd>
+<dt><em>Publication_Date:</em>  20170125</dt>
+<dt><em>Title:</em>  New Jersey Road Centerlines GIS Data</dt>
+<dt><em>Geospatial_Data_Presentation_Form:</em>  vector digital data</dt>
+<dt><em>Online_Linkage:</em>  https://njgin.state.nj.us/NJ_NJGINExplorer/jviewer.jsp?pg=ROADS</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Source_Information:</em>  
+<dd>
+<dl>
+<dt><em>Source_Scale_Denominator:</em>  1:2400</dt>
+<dt><em>Type_of_Source_Media:</em>  Digital vector data</dt>
+<dt><em>Source_Contribution:</em>  Supplemental resource data</dt>
+<dt><em>Source_Citation:</em>  
+<dd>
+<dl>
+<dt><em>Citation_Information:</em>  
+<dd>
+<dl>
+<dt><em>Originator:</em>  NJDEP/BGIS</dt>
+<dt><em>Publication_Date:</em>  20150217</dt>
+<dt><em>Title:</em>  NJDEP 2012 Land Use/Land Cover update, 2/17/15</dt>
+<dt><em>Geospatial_Data_Presentation_Form:</em>  vector digital data</dt>
+<dt><em>Online_Linkage:</em>  https://www.nj.gov/dep/gis/lulc12.html</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+
+<a name="3">
+</a>
+<hr/>
+<dl>
+<dt><em>Spatial_Data_Organization_Information:</em>  
+<dd>
+<dl>
+<dt><em>Direct_Spatial_Reference_Method:</em>  Vector</dt>
+<dt><em>Point_and_Vector_Object_Information:</em>  
+<dd>
+<dl>
+<dt><em>SDTS_Terms_Description:</em>  
+<dd>
+<dl>
+<dt><em>SDTS_Point_and_Vector_Object_Type:</em>  G-polygon</dt>
+<dt><em>Point_and_Vector_Object_Count:</em>  6626</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+
+<a name="4">
+</a>
+<hr/>
+<dl>
+<dt><em>Spatial_Reference_Information:</em>  
+<dd>
+<dl>
+<dt><em>Horizontal_Coordinate_System_Definition:</em>  
+<dd>
+<dl>
+<dt><em>Planar:</em>  
+<dd>
+<dl>
+<dt><em>Grid_Coordinate_System:</em>  
+<dd>
+<dl>
+<dt><em>Grid_Coordinate_System_Name:</em>  State Plane Coordinate System 1983</dt>
+<dt><em>State_Plane_Coordinate_System:</em>  
+<dd>
+<dl>
+<dt><em>SPCS_Zone_Identifier:</em>  2900</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+
+<a name="5">
+</a>
+<hr/>
+<dl>
+<dt><em>Entity_and_Attribute_Information:</em>  
+<dd>
+<dl>
+<dt><em>Detailed_Description:</em>  
+<dd>
+<dl>
+<dt><em>Entity_Type:</em>  
+<dd>
+<dl>
+<dt><em>Entity_Type_Label:</em>  Impervious Surface</dt>
+<dt><em>Entity_Type_Definition:</em>  Rast_impervious_surface</dt>
+<dt><em>Entity_Type_Definition_Source:</em>  Esri</dt>
+</dl>
+</dd>
+<dt><em>Attribute:</em>  
+<dd>
+<dl>
+<dt><em>Attribute_Label:</em>  FID</dt>
+<dt><em>Attribute_Definition:</em>  Internal feature number.</dt>
+<dt><em>Attribute_Definition_Source:</em>  ESRI</dt>
+<dt><em>Attribute_Domain_Values:</em>  
+<dd>
+<dl>
+<dt><em>Unrepresentable_Domain:</em>  
+<dd>
+
+Sequential unique whole numbers that are automatically generated.
+
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Attribute:</em>  
+<dd>
+<dl>
+<dt><em>Attribute_Label:</em>  OBJECTID</dt>
+<dt><em>Attribute_Definition:</em>  Internal feature number.</dt>
+<dt><em>Attribute_Definition_Source:</em>  Esri</dt>
+<dt><em>Attribute_Domain_Values:</em>  
+<dd>
+<dl>
+<dt><em>Unrepresentable_Domain:</em>  
+<dd>
+
+Sequential unique whole numbers that are automatically generated.
+
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Attribute:</em>  
+<dd>
+<dl>
+<dt><em>Attribute_Label:</em>  Shape</dt>
+<dt><em>Attribute_Definition:</em>  Feature geometry.</dt>
+<dt><em>Attribute_Definition_Source:</em>  Esri</dt>
+<dt><em>Attribute_Domain_Values:</em>  
+<dd>
+<dl>
+<dt><em>Unrepresentable_Domain:</em>  Coordinates defining the features.</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Attribute:</em>  
+<dd>
+<dl>
+<dt><em>Attribute_Label:</em>  ClassName</dt>
+<dt><em>Attribute_Definition:</em>  
+<dd>
+
+Impervious Class. Three classes of impervious surfaces were mapped: 1) Buildings, Roads, and Other Impervious Surfaces.
+
+</dd>
+<dt><em>Attribute_Definition_Source:</em>  Project</dt>
+<dt><em>Attribute_Domain_Values:</em>  
+<dd>
+<dl>
+<dt><em>Enumerated_Domain:</em>  
+<dd>
+<dl>
+<dt><em>Enumerated_Domain_Value:</em>  Buildings</dt>
+<dt><em>Enumerated_Domain_Value_Definition:</em>  Above-ground impervious structures</dt>
+<dt><em>Enumerated_Domain_Value_Definition_Source:</em>  Applied Geographics</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Attribute_Domain_Values:</em>  
+<dd>
+<dl>
+<dt><em>Enumerated_Domain:</em>  
+<dd>
+<dl>
+<dt><em>Enumerated_Domain_Value:</em>  Roads</dt>
+<dt><em>Enumerated_Domain_Value_Definition:</em>  Roads that are paved or highly compacted</dt>
+<dt><em>Enumerated_Domain_Value_Definition_Source:</em>  Applied GeoGraphics</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Attribute_Domain_Values:</em>  
+<dd>
+<dl>
+<dt><em>Enumerated_Domain:</em>  
+<dd>
+<dl>
+<dt><em>Enumerated_Domain_Value:</em>  Other</dt>
+<dt><em>Enumerated_Domain_Value_Definition:</em>  
+<dd>
+
+Other impervious features )parking lotes, sidewalks, driveways, etc.) that are paved or highly compacted
+
+</dd>
+<dt><em>Enumerated_Domain_Value_Definition_Source:</em>  Applied Geographics</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Attribute_Measurement_Frequency:</em>  011</dt>
+</dl>
+</dd>
+<dt><em>Attribute:</em>  
+<dd>
+<dl>
+<dt><em>Attribute_Label:</em>  Acres</dt>
+<dt><em>Attribute_Definition:</em>  Polygon Acreage</dt>
+<dt><em>Attribute_Definition_Source:</em>  
+<dd>
+
+New Jersey Department of Environmental Protection, Bureau of Geographic Information Systems
+
+</dd>
+<dt><em>Attribute_Domain_Values:</em>  
+<dd>
+<dl>
+<dt><em>Unrepresentable_Domain:</em>  Positive real numbers that are automatically generated.</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Attribute:</em>  
+<dd>
+<dl>
+<dt><em>Attribute_Label:</em>  MUN</dt>
+<dt><em>Attribute_Definition:</em>  municipality name (capital letters)</dt>
+<dt><em>Attribute_Definition_Source:</em>  
+<dd>
+
+New Jersey Department of Environmental Protection, Bureau of Geographic Information Systems
+
+</dd>
+<dt><em>Attribute_Domain_Values:</em>  
+<dd>
+<dl>
+<dt><em>Unrepresentable_Domain:</em>  municipality name (capital letters)</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Attribute:</em>  
+<dd>
+<dl>
+<dt><em>Attribute_Label:</em>  COUNTY</dt>
+<dt><em>Attribute_Definition:</em>  county name (capital letters)</dt>
+<dt><em>Attribute_Definition_Source:</em>  
+<dd>
+
+New Jersey Department of Environmental Protection, Bureau of Geographic Information Systems
+
+</dd>
+<dt><em>Attribute_Domain_Values:</em>  
+<dd>
+<dl>
+<dt><em>Unrepresentable_Domain:</em>  county name (capital letters)</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Attribute:</em>  
+<dd>
+<dl>
+<dt><em>Attribute_Label:</em>  MUN_LABEL</dt>
+<dt><em>Attribute_Definition:</em>  municipality name (for labels)</dt>
+<dt><em>Attribute_Definition_Source:</em>  
+<dd>
+
+New Jersey Department of Environmental Protection, Bureau of Geographic Information Systems
+
+</dd>
+<dt><em>Attribute_Domain_Values:</em>  
+<dd>
+<dl>
+<dt><em>Unrepresentable_Domain:</em>  municipality name (for labels)</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Attribute:</em>  
+<dd>
+<dl>
+<dt><em>Attribute_Label:</em>  MUN_TYPE</dt>
+<dt><em>Attribute_Definition:</em>  municipality type</dt>
+<dt><em>Attribute_Definition_Source:</em>  
+<dd>
+
+New Jersey Department of Environmental Protection, Bureau of Geographic Information Systems
+
+</dd>
+<dt><em>Attribute_Domain_Values:</em>  
+<dd>
+<dl>
+<dt><em>Unrepresentable_Domain:</em>  municipality type</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Attribute:</em>  
+<dd>
+<dl>
+<dt><em>Attribute_Label:</em>  NAME</dt>
+<dt><em>Attribute_Definition:</em>  
+<dd>
+
+municipality name (for labels - without municipality type for cities and towns)
+
+</dd>
+<dt><em>Attribute_Definition_Source:</em>  
+<dd>
+
+NJ Office of Information Technology, Office of Geographic Information Systems
+
+</dd>
+<dt><em>Attribute_Domain_Values:</em>  
+<dd>
+<dl>
+<dt><em>Unrepresentable_Domain:</em>  
+<dd>
+
+municipality name (for labels - without municipality type for cities and towns)
+
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Attribute:</em>  
+<dd>
+<dl>
+<dt><em>Attribute_Label:</em>  GNIS_NAME</dt>
+<dt><em>Attribute_Definition:</em>  municipality name (GNIS)</dt>
+<dt><em>Attribute_Definition_Source:</em>  Bureau of Geographic Names - United States Geological Survey</dt>
+<dt><em>Attribute_Domain_Values:</em>  
+<dd>
+<dl>
+<dt><em>Codeset_Domain:</em>  
+<dd>
+<dl>
+<dt><em>Codeset_Name:</em>  GNIS civil code</dt>
+<dt><em>Codeset_Source:</em>  Bureau of Geographic Names - United States Geological Survey</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Attribute:</em>  
+<dd>
+<dl>
+<dt><em>Attribute_Label:</em>  GNIS</dt>
+<dt><em>Attribute_Definition:</em>  GNIS civil code</dt>
+<dt><em>Attribute_Definition_Source:</em>  Bureau of Geographic Names - United States Geological Survey</dt>
+</dl>
+</dd>
+<dt><em>Attribute:</em>  
+<dd>
+<dl>
+<dt><em>Attribute_Label:</em>  SSN</dt>
+<dt><em>Attribute_Definition:</em>  State Standard Numeric code</dt>
+<dt><em>Attribute_Definition_Source:</em>  New Jersey Department of Community Affairs</dt>
+<dt><em>Attribute_Domain_Values:</em>  
+<dd>
+<dl>
+<dt><em>Codeset_Domain:</em>  
+<dd>
+<dl>
+<dt><em>Codeset_Name:</em>  State Standard Numeric code</dt>
+<dt><em>Codeset_Source:</em>  Bureau of Geographic Names - United States Geological Survey</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Attribute:</em>  
+<dd>
+<dl>
+<dt><em>Attribute_Label:</em>  MUN_CODE</dt>
+<dt><em>Attribute_Definition:</em>  municipal code (NJ-1040)</dt>
+<dt><em>Attribute_Definition_Source:</em>  New Jersey Department of Treasury, Division of Taxation</dt>
+<dt><em>Attribute_Domain_Values:</em>  
+<dd>
+<dl>
+<dt><em>Codeset_Domain:</em>  
+<dd>
+<dl>
+<dt><em>Codeset_Name:</em>  municipal code (NJ-1040)</dt>
+<dt><em>Codeset_Source:</em>  New Jersey Department of Treasury, Division of Taxation</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Attribute:</em>  
+<dd>
+<dl>
+<dt><em>Attribute_Label:</em>  Shape_Leng</dt>
+<dt><em>Attribute_Definition:</em>  Length of feature in internal units.</dt>
+<dt><em>Attribute_Definition_Source:</em>  ESRI</dt>
+<dt><em>Attribute_Domain_Values:</em>  
+<dd>
+<dl>
+<dt><em>Unrepresentable_Domain:</em>  Positive real numbers that are automatically generated</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Attribute:</em>  
+<dd>
+<dl>
+<dt><em>Attribute_Label:</em>  Shape_Area</dt>
+<dt><em>Attribute_Definition:</em>  Area of feature in internal units squared.</dt>
+<dt><em>Attribute_Definition_Source:</em>  Esri</dt>
+<dt><em>Attribute_Domain_Values:</em>  
+<dd>
+<dl>
+<dt><em>Unrepresentable_Domain:</em>  Positive real numbers that are automatically generated.</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Overview_Description:</em>  
+<dd>
+<dl>
+<dt><em>Entity_and_Attribute_Overview:</em>  
+<dd>
+
+Impervious surfaces for the State of New Jersey. Three classes of impervious surfaces were mapped: 1) Buildings, Roads, and Other Impervious Surfaces. Note that buildings do not exist for some areas due to the lack of LiDAR data. In these instances, buildings are assigned to the Other Impervious class.
+
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+
+<a name="6">
+</a>
+<hr/>
+<dl>
+<dt><em>Distribution_Information:</em>  
+<dd>
+<dl>
+<dt><em>Resource_Description:</em>  Downloadable Data</dt>
+<dt><em>Distribution_Liability:</em>  
+<dd>
+
+The State of New Jersey makes great effort to provide secure, accurate, and complete data and metadata. However, portions of the data and metadata may be incorrect or not current. Any errors or omissions should be reported for investigation.
+<br/>
+The State of New Jersey, its officers, employees or agents shall not be liable for damages or losses of any kind arising out of or in connection with the use or performance of data and metadata, including but not limited to, damages or losses caused by reliance upon the accuracy or timeliness of any such data and metadata, or damages incurred from the viewing, distributing, or copying of those materials.
+<br/>
+The data and metadata are provided &quot;as is.&quot; No warranty of any kind, implied, expressed, or statutory, including but not limited to the warranties of non-infringement of third party rights, title, merchantability, fitness for a particular purpose, and freedom from computer virus, is given with respect to the data and metadata, or its hyperlinks to other Internet resources.
+<br/>
+The State disclaims any duty or obligation either to maintain availability of or to update the data and metadata.
+
+</dd>
+<dt><em>Standard_Order_Process:</em>  
+<dd>
+<dl>
+<dt><em>Digital_Form:</em>  
+<dd>
+<dl>
+<dt><em>Digital_Transfer_Information:</em>  
+<dd>
+<dl>
+<dt><em>Format_Name:</em>  
+<dd>
+
+DEP distributes ESRI .SHP and/or GDB. Some data may be NJ GeoWeb &quot;display only&quot; layers.
+
+</dd>
+<dt><em>Format_Version_Number:</em>  latest version</dt>
+<dt><em>File_Decompression_Technique:</em>  WinZip</dt>
+</dl>
+</dd>
+<dt><em>Digital_Transfer_Option:</em>  
+<dd>
+<dl>
+<dt><em>Online_Option:</em>  
+<dd>
+<dl>
+<dt><em>Computer_Contact_Information:</em>  
+<dd>
+<dl>
+<dt><em>Network_Address:</em>  
+<dd>
+<dl>
+<dt><em>Network_Resource_Name:</em>  https://gisdata-njdep.opendata.arcgis.com</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Computer_Contact_Information:</em>  
+<dd>
+<dl>
+<dt><em>Network_Address:</em>  
+<dd>
+<dl>
+<dt><em>Network_Resource_Name:</em>  https://www.nj.gov/dep/gis</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><em>Fees:</em>  None</dt>
+<dt><em>Ordering_Instructions:</em>  
+<dd>
+
+All available NJDEP public GIS data can be downloaded for free. Some data shown in NJGeoWeb application may not yet be available for download due to various data or distribution issues. Please email gisnet@dep.nj.gov with any data distribution questions.
+
+</dd>
+</dl>
+</dd>
+<dt><em>Distributor:</em>  
+<dd>
+<dl>
+<dt><em>Contact_Information:</em>  
+<dd>
+<dl>
+<dt><em>Contact_Organization_Primary:</em>  
+<dd>
+<dl>
+<dt><em>Contact_Organization:</em>  NJDEP/DOIT/Bureau of GIS</dt>
+<dt><em>Contact_Person:</em>  GIS Help Desk</dt>
+</dl>
+</dd>
+<dt><em>Contact_Address:</em>  
+<dd>
+<dl>
+<dt><em>Address_Type:</em>  mailing and physical</dt>
+<dt><em>Address:</em>  401 East State Street</dt>
+<dt><em>City:</em>  Trenton</dt>
+<dt><em>State_or_Province:</em>  NJ</dt>
+<dt><em>Postal_Code:</em>  08625</dt>
+</dl>
+</dd>
+<dt><em>Contact_Voice_Telephone:</em>  (609) 777-0672</dt>
+<dt><em>Contact_Facsimile_Telephone:</em>  (609) 292-7900</dt>
+<dt><em>Contact_Electronic_Mail_Address:</em>  gisnet@dep.nj.gov</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+
+<a name="7">
+</a>
+<hr/>
+<dl>
+<dt><em>Metadata_Reference_Information:</em>  
+<dd>
+<dl>
+<dt><em>Metadata_Date:</em>  20190104</dt>
+<dt><em>Metadata_Standard_Name:</em>  FGDC Content Standard for Digital Geospatial Metadata</dt>
+<dt><em>Metadata_Standard_Version:</em>  FGDC-STD-001-1998</dt>
+<dt><em>Metadata_Time_Convention:</em>  local time</dt>
+<dt><em>Metadata_Contact:</em>  
+<dd>
+<dl>
+<dt><em>Contact_Information:</em>  
+<dd>
+<dl>
+<dt><em>Contact_Organization_Primary:</em>  
+<dd>
+<dl>
+<dt><em>Contact_Organization:</em>  NJDEP/DOIT/Bureau of GIS</dt>
+<dt><em>Contact_Person:</em>  GIS Help Desk</dt>
+</dl>
+</dd>
+<dt><em>Contact_Address:</em>  
+<dd>
+<dl>
+<dt><em>Address_Type:</em>  mailing and physical</dt>
+<dt><em>Address:</em>  401 East State Street</dt>
+<dt><em>City:</em>  Trenton</dt>
+<dt><em>State_or_Province:</em>  NJ</dt>
+<dt><em>Postal_Code:</em>  08625</dt>
+</dl>
+</dd>
+<dt><em>Contact_Voice_Telephone:</em>  (609) 777-0672</dt>
+<dt><em>Contact_Facsimile_Telephone:</em>  (609) 292-7900</dt>
+<dt><em>Contact_Electronic_Mail_Address:</em>  gisnet@dep.nj.gov</dt>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+
+<hr/>
+Generated by <a href="http://geology.usgs.gov/tools/metadata/tools/doc/mp.html"><tt>mp</tt></a> version 2.9.12 on Fri Jan 04 09:46:31 2019<br/>
+
+</body>
+</html>

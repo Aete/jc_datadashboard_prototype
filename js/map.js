@@ -8,12 +8,12 @@ map.addControl(new mapboxgl.NavigationControl(), 'top-left');
 
 var url_neighborhood = 'js/data/neighborhoods.geojson';
 var url_park = 'js/data/park.geojson';
+var url_tree_2019_fall = 'js/data/fall_2019.geojson';
+var url_tree_2019_spring = 'js/data/spring_2019.geojson';
 var hoverNeighborhoodId =  null;
-var clickNeighborhoodId = null;
+var clicked_feature = null;
 var neigh_clicked = '';
-var neigh_clicked_now = '';
 var neigh_hovered = '';
-var coord = '';
 var centerpoints = {
     'Downtown':{'lng':-74.040664,'lat':40.723850},
     'McGinley Square': {"lng":-74.06397302244267,"lat":40.72199859608176},
@@ -25,7 +25,8 @@ var centerpoints = {
     'Liberty Park': {"lng":-74.04780803472653,"lat":40.69923748533216},
     'Greenville': {"lng":-74.0800702031342,"lat":40.7009381205886},
     'Bergen-Lafayette':{"lng":-74.05639110356594,"lat":40.71241324924449},
-    'Lincoln Park': {"lng":-74.0789477476726,"lat":40.728145292890616}
+    'Lincoln Park': {"lng":-74.0789477476726,"lat":40.728145292890616},
+    'Jersey City':{"lng":-74.030000,"lat":40.720935}
 };
 
 map.on('load', function () {
@@ -35,18 +36,8 @@ map.on('load', function () {
     }, 2000);
     map.addSource('park', { type: 'geojson', data: url_park, 'generateId': true});
     map.addSource('neighborhood', { type: 'geojson', data: url_neighborhood, 'generateId': true});
-    map.addLayer({
-        "id": "park",
-        "source": "park",
-        "type": "fill",
-        "layout": {
-        },
-        "paint": {
-            "fill-color": "Green",
-            "fill-opacity": 0.4
-        }
-    });
-
+    map.addSource('tree_2019_fall', { type: 'geojson', data: url_tree_2019_fall, 'generateId': true});
+    map.addSource('tree_2019_spring', { type: 'geojson', data: url_tree_2019_spring, 'generateId': true});
     map.addLayer({
         "id": "neighborhoods-border",
         "source": "neighborhood",
@@ -56,14 +47,8 @@ map.on('load', function () {
             "line-cap": "round"
         },
         "paint": {
-            "line-color": ["case",
-                ["boolean", ["feature-state", "click"], false],
-                "Green",
-                "white"
-
-            ] ,
-            "line-width": 1.5,
-            "line-dasharray": [0.1, 2.5]
+            "line-color": 'white',
+            "line-width": 0.1
         }
     });
 
@@ -73,7 +58,7 @@ map.on('load', function () {
         "type": "fill",
         "layout": { },
         "paint": {
-            "fill-color": "#a6a6a6",
+            "fill-color": "#80DEEA",
             "fill-opacity": ["case",
                 ["boolean", ["feature-state", "hover"], false],
                 0.2,
@@ -82,56 +67,83 @@ map.on('load', function () {
         }
     });
 
-    map.on("click", "neighborhoods-border",  function(e) {
-        if (e.features.length > 0) {
-            if (hoverNeighborhoodId) {
-                map.setFeatureState({source: 'neighborhood', id: clickNeighborhoodId}, { click: false});
-            }
-            neigh_clicked_now = e.features[0].properties.NAME;
-            clickNeighborhoodId = e.features[0].id;
-            map.setFeatureState({source: 'neighborhood', id: 0}, {click: false});
-            if(neigh_clicked === neigh_clicked_now){
-                map.setFeatureState({source: 'neighborhood', id: 0}, {click: false});
-            }
-            else{
-                map.setFeatureState({source: 'neighborhood', id: clickNeighborhoodId}, {click: true});
-            }
-
-    }});
-
-    map.on("click", "neighborhoods-fill", function(e) {
-        neigh_clicked = e.features[0].properties.NAME;
-
-        $("#test").text(neigh_clicked);
-        $("#rain").text(dataset_jc_green[neigh_clicked]['rain']);
-        map.flyTo({
-            center: [ centerpoints[neigh_clicked]['lng'], centerpoints[neigh_clicked]['lat']],
-            zoom: 14})
-    });
-
-    map.on("mousemove", "neighborhoods-fill", function(e) {
-        if (e.features.length > 0) {
-            if (hoverNeighborhoodId) {
-                map.setFeatureState({source: 'neighborhood', id: hoverNeighborhoodId}, { hover: false});
-            }
-            neigh_hovered = e.features[0].properties.NAME;
-            hoverNeighborhoodId = e.features[0].id;
-            map.setFeatureState({source: 'neighborhood', id: 0}, { hover: false});
-            if(neigh_clicked ===neigh_hovered){
-                map.setFeatureState({source: 'neighborhood', id: 0}, { hover: false});
-            }
-            else{
-                map.setFeatureState({source: 'neighborhood', id: hoverNeighborhoodId}, { hover: true});
-            }
+    map.addLayer({
+        "id": "tree_2019_fall",
+        "source": 'tree_2019_fall',
+        "type": "circle",
+        "layout": {
+        },
+        "paint": {
+            'circle-color': '#00E676',
+            'circle-radius': 3
         }
     });
 
-    map.on("mouseleave", "neighborhoods-fill", function() {
-        if (hoverNeighborhoodId){
-            map.setFeatureState({source: 'neighborhood', id: hoverNeighborhoodId}, { hover: false});
+    map.addLayer({
+        "id": "tree_2019_spring",
+        "source": 'tree_2019_spring',
+        "type": "circle",
+        "layout": {
+        },
+        "paint": {
+            'circle-color': '#00E676',
+            'circle-radius': 3
         }
-        map.setFeatureState({source: 'neighborhood', id: 0}, { hover: false});
-        hoverNeighborhoodId =  null;
     });
 });
 
+
+map.on("click", "neighborhoods-fill", function(e) {
+    clicked_feature = e.features[0];
+    console.log(clicked_feature);
+    neigh_clicked = clicked_feature.properties.NAME;
+    renew_info(neigh_clicked );
+    highlight(clicked_feature);
+});
+
+map.on("mouseleave", "neighborhoods-fill", function() {
+    if (hoverNeighborhoodId){
+        map.setFeatureState({source: 'neighborhood', id: hoverNeighborhoodId}, { hover: false});
+    }
+    map.setFeatureState({source: 'neighborhood', id: 0}, { hover: false});
+    hoverNeighborhoodId =  null;
+});
+
+map.on("mousemove", "neighborhoods-fill", function(e) {
+    if (e.features.length > 0) {
+        if (hoverNeighborhoodId) {
+            map.setFeatureState({source: 'neighborhood', id: hoverNeighborhoodId}, { hover: false});
+        }
+        neigh_hovered = e.features[0].properties.NAME;
+        hoverNeighborhoodId = e.features[0].id;
+        map.setFeatureState({source: 'neighborhood', id: 0}, { hover: false});
+        if(neigh_clicked ===neigh_hovered){
+            map.setFeatureState({source: 'neighborhood', id: 0}, { hover: false});
+        }
+        else{
+            map.setFeatureState({source: 'neighborhood', id: hoverNeighborhoodId}, { hover: true});
+        }
+    }
+});
+
+var highlight = function(feature){
+    if (typeof map.getLayer('selected') !== "undefined" ){
+        map.removeLayer('selected');
+        map.removeSource('selectedNeighborhood');
+    }
+    map.addSource('selectedNeighborhood', {
+        "type":"geojson",
+        "data": feature
+    });
+    map.addLayer({
+        "id": 'selected',
+        "type": "line",
+        "source": 'selectedNeighborhood',
+        "layout": {
+        },
+        "paint": {
+            "line-color": "#80DEEA",
+            "line-width": 1
+        }
+    });
+};

@@ -42,8 +42,21 @@ nav>#menu{
 
 #dropdown{
     display:flex;
+    cursor: pointer;
+}
+#dropdown-box{
+    z-index:3;
+    top:40px;
+    position:absolute;
+    background-color:rgba(30,30,30,0.9);
+    color: dimgray;
+    display:none;
+    cursor: pointer;
 }
 
+#dropdown-box>p:hover{
+    color:aliceblue;
+}
 #region{
     margin-right: 7px;
 }
@@ -74,27 +87,53 @@ nav>#menu{
 #graphs>p{
 
 }
+
+#chart{
+    display:flex;
+    flex-direction: row;
+    height:100%;
+
+}
+
+#chart h3{
+    color:white;
+    margin-bottom:5px;
+}
+
+#part_1{
+    width:50%;
+    height:100%;
+}
+
+#part_1_1{
+    text-align:center;
+}
+
+#part_1_2{
+    text-align:center;
+}
+
 #graph1{
-    height:25%;
+    height:24%;
     width: 100%;
     border-bottom : 1px solid  dimgrey;
 }
 
 #graph1-1{
-    padding: 0 0 12px 0;
-    border-right: 1px solid  dimgrey;
+    padding: 0 10px 12px 0;
     width:45%;
     text-align: center;
 
 }
 
 #graph2{
-    height:25%;
+    height:24%;
     border-bottom : 1px solid  dimgrey;
 }
 #graph3{
-    height:25%;
+    height:24%;
     width: 100%;
+    border-bottom : 1px solid  dimgrey;
 
 }
 #graph1>p{

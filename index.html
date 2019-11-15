@@ -8,6 +8,7 @@
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.0/mapbox-gl.css' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="https://d3js.org/d3.v4.js"></script>
 </head>
 <body>
     <main>
@@ -28,23 +29,28 @@
                         <div id="button-number"></div>
                     </nav>
                 </div>
-                <div id="graph1">
-                    <p > Annual Captured Stormwater </p>
-                    <div style="display:flex;">
-                        <div id="graph1-1">
-                            <p style="color:white; margin-top:0;"> <span id='rain' style="font-size:5.5em; margin:0 0 0 0; color:white"> 1.05</span><br> billion gallons</p>
-                            <p style="color:white; margin-bottom: 0"> (Value: $ 10000000000) </p>
+                <div id='chart'>
+                    <div id="part_1">
+                        <h3>2019</h3>
+                        <div id="part_1_1">
+                            <p style="color:white; margin-top:0; margin-bottom:6px;"> <span id='trees' style="font-size:5.5em; margin:0 0 0 0; color:white"> ????</span><br>trees were planted in 2019</p>
+                            <p style="color:white; margin-top:0; margin-bottom: 10px;"> (Value: $ ?) </p>
                         </div>
-                        <div id="graph1-2"> </div>
+                        <div id="part_1_2">
+                            <p style="color:white; margin-top:0; margin-bottom:6px;"> <span id='trees' style="font-size:5.5em; margin:0 0 0 0; color:white"> ????</span><br>gallons</p>
+                            <p style="color:white; margin-top:0; margin-bottom: 10px;"> (Value: $ ?) </p>
+                        </div>
+                        <div id="graph3">
+
+                        </div>
+                    </div>
+                    <div id="objective">
+                        <h4>Objective</h4>
                     </div>
                 </div>
-                <div id="graph2">
-                    <p> Tree Density (trees/m2) </p>
-                </div>
-                <div id="graph3">
-                    <p> Impervious Area Ratio (%)</p>
-                </div>
             </div>
+
+
     </div>
     </main>
 </body>
@@ -54,7 +60,7 @@
     mapboxgl.accessToken = 'pk.eyJ1Ijoic2doYW4iLCJhIjoiY2p2djM2OXNoMDc5czQ5bnVnYjdlMnZuNiJ9.UvTqx5Ah-TXmuctfQj6Y1A';
 
 </script>
-<script src="js/app.js"></script>
 <script src="js/data/dataset1.js"></script>
+<script src="js/app.js"></script>
 <script src="js/map.js"></script>
 </html>

@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8"?><metadata>
+    <idinfo>
+        <citation>
+            <citeinfo>
+                <origin/>
+                <pubdate>20161115</pubdate>
+                <title>Combined Sewer Overflow (CSO) for NJ, Edition 20180723 (Util_NJPDES_CSO) (Web Mercator ArcGIS Online Service)</title>
+                <geoform>vector digital data</geoform>
+                <pubinfo>
+                    <pubplace/>
+                    <publish>NJ Department of Environmental Protection (NJDEP)</publish>
+                </pubinfo>
+                <onlink>https://www.nj.gov/dep/gis/geowebsplash.htm</onlink>
+                <onlink>https://www.nj.gov/dep/gis</onlink>
+                <onlink>https://www.nj.gov/dep/gis/digidownload/zips/OpenData/Util_NJPDES_CSO.zip</onlink>
+            </citeinfo>
+        </citation>
+        <descript>
+            <abstract>This is a geographical representation of the locations of CSO outfall points statewide. Combined Sewer Overflows (CSO) are sewers that are designed to collect rainwater runoff, domestic sewage, and industrial wastewater in the same pipe. Most of the time, combined sewer systems transport all of their wastewater to a sewage treatment plant, where it is treated and then discharged to a water body. During periods of heavy rainfall or snowmelt, however, the wastewater volume in a combined sewer system can exceed the capacity of the sewer collection system or treatment plant.This map data layer provides information regarding the location of permitted CSO Outfall Points, the applicable NJPDES Permit number, the assigned 3-digit discharge serial number, the latitude and longitude, the alternate name (such as a street address) of the CSO point, the municipality and Watershed Management Area (WMA) where the CSO outfall is located, a unique identifier for each point consisting of the permit number and outfall number, the receiving waterbody, the receiving treatment plant name and permit number, if the CSO outfall has solids and floatable treatment, a link for Discharge Monitoring Report (DMR) data, and a website.</abstract>
+            <purpose>The data will be used for permitting, planning and program implementation.  The DEP administers the New Jersey Pollutant Discharge Elimination System regulations (N.J.A.C. 7:14A 1 et seq.), which are promulgated pursuant to the authority of the New Jersey "Water Pollution Control Act" (N.J.S.A. 58:10A 1 et seq.), the New Jersey "Sewage Infrastructure Improvement Act"(N.J.S.A. 58:25 23 et seq.), the Federal Water Pollution Control Act (Clean Water Act) as amended by the Water Quality Act of 1987 (P.L. 100 4, approved Feb. 4, 1987), the National CSO Control Policy (59 Federal Register 18688), and the Consolidated Appropriations Act for Fiscal Year 2001, P.L. 106-554 (or "2000 amendments to the federal Clean Water Act (CWA)"). One of the Nine Minimum Control Measures identified in the National CSO Policy is Public Notification. One of the objectives of Public Notification is to inform the public of the location of CSO discharge points. The Division of Water Quality has developed this digital GIS layer in an effort to make the locations of CSO points easily accessible to the public.</purpose>
+            <supplinf>The program had asked CSO permitees to verify existing data as part of a permit requirement.  This process resulted in more precise data which has been incorporated into the data layer. New Jersey is currently implementing a comprehensive CSO Control Program that may include the relocation or elimination of CSO Points over a period of time. Therefore, the identification and location of CSO Points may change as control plans are implemented. Originally, the CSO Point discharge locations existed as latitude and longitude data and physical maps provided to the Department in Request for Authorizations (RFA) under the General Permit for Combined Sewer Systems and other Individual NJPDES Permit applications. In an effort to consolidate the information into a consistent format easily accessible over the internet, the Division of Water Quality converted the information into a digital GIS layer. The GIS layer was then revised based upon staff knowledge and a review of the Department's files including Treatment Works Approval Permits, engineered planning documents submitted to the Department, and the review of current GIS Aerial photography for the purposes of refining the location of discharge points. This current version updates the existing data with the data submitted by the permittees in January 2016.</supplinf>
+        </descript>
+        <timeperd>
+            <timeinfo>
+                <sngdate>
+                    <caldate>20161115</caldate>
+                </sngdate>
+            </timeinfo>
+            <current>Ground condition</current>
+        </timeperd>
+        <status>
+            <progress>In work</progress>
+            <update>Annually</update>
+        </status>
+        <spdom>
+            <bounding>
+                <westbc>-75.14201</westbc>
+                <eastbc>-73.966171</eastbc>
+                <northbc>40.938882</northbc>
+                <southbc>39.891097</southbc>
+            </bounding>
+        </spdom>
+        <keywords>
+            <theme>
+                <themekt>ISO 19115 Topic Category</themekt>
+                <themekey>utilitiesCommunication</themekey>
+            </theme>
+            <theme>
+                <themekt>NJGIN</themekt>
+                <themekey>njfw_critical</themekey>
+            </theme>
+            <theme>
+                <themekt>None</themekt>
+                <themekey>waste</themekey>
+                <themekey>wastewater</themekey>
+                <themekey>discharge</themekey>
+                <themekey>sewage</themekey>
+                <themekey>CSO</themekey>
+                <themekey>combined sewer overflow</themekey>
+                <themekey>sewers</themekey>
+                <themekey>runoff</themekey>
+                <themekey>pipe</themekey>
+                <themekey>overflow</themekey>
+                <themekey>pollution</themekey>
+            </theme>
+            <theme>
+                <themekt>User</themekt>
+                <themekey>CSO</themekey>
+                <themekey>Util_NJPDES_CSO</themekey>
+            </theme>
+            <place>
+                <placekt>None</placekt>
+                <placekey>New Jersey</placekey>
+            </place>
+        </keywords>
+        <accconst>By downloading and/or using this data layer in this format, user accepts caveats pertaining to updates, accuracy and other critical data layer information.</accconst>
+        <useconst>New Jersey Department of Environmental Protection (NJDEP) Data Distribution Agreement. The data provided herein are distributed subject to the following conditions and restrictions: NJDEP assumes no responsibility to maintain them in any manner or form and disclaims any duty or obligation to either maintain availability of or to update the data. Terms of Agreement 1. All data is provided, as is, without any representation or warranty of any kind, implied, expressed or statutory including, but not limited to, the warranties of non-infringement of third party rights, title, merchantability or fitness for a particular use, freedom from computer virus nor are any such warranties to be implied with respect to the digital data layers furnished hereunder. User is responsible for understanding the accuracy limitations of all digital data layers provided herein, as documented in the accompanying cross-reference files (see SUPPLEMENTAL INFORMATION). Any reproduction or manipulation of the above data must ensure that the coordinate reference system remains intact. 2. Digital data received from the NJDEP may not be reproduced or redistributed without all the metadata provided. 3. Any maps, publications, reports, or other documents produced as a result of this project that utilize this digital data will credit the NJDEP's Geographic Information System (GIS) as the source of the data with the following credit/disclaimer: "This (map/publication/report) was developed using New Jersey Department of Environmental Protection Geographic Information System digital data, but this secondary product has not been verified by NJDEP and is not state-authorized or endorsed." 4. NJDEP makes no warranty that digital data are free of Copyright or Trademark claims or other restrictions or limitations on free use or display. Making a copy of this data may be subject to the copyright of trademark laws.</useconst>
+        <ptcontac>
+            <cntinfo>
+                <cntorgp>
+                    <cntorg>DWQ, Bureau of Surface Water Permitting</cntorg>
+                    <cntper>Robert Hall</cntper>
+                </cntorgp>
+                <cntaddr>
+                    <addrtype>mailing</addrtype>
+                    <address>Mail Code 401-02B, P.O. Box 029, 401 East State Street</address>
+                    <city>Trenton</city>
+                    <state>NJ</state>
+                    <postal>08625-029</postal>
+                </cntaddr>
+                <cntvoice>609-292-4860</cntvoice>
+                <cntemail>Robert.Hall@dep.nj.gov</cntemail>
+                <cntinst>via email</cntinst>
+            </cntinfo>
+        </ptcontac>
+        <browse>
+            <browsen>https://www.nj.gov/dep/gis/digidownload/images/statewide/cso.gif</browsen>
+            <browsed>image</browsed>
+            <browset>GIF</browset>
+        </browse>
+        <native>ESRI ArcCatalog 9.3.1.3500</native>
+    </idinfo>
+    <dataqual>
+        <attracc>
+            <attraccr>Originally, the CSO Point Discharge Locations existed as CSO Point latitude and longitude data and physical maps provided to the Department in Request for Authorizations (RFA) under the General Permit for Combined Sewer Systems and other Individual NJPDES Permit applications. In an effort to consolidate the information into a consistent format easily accessible over the internet, the Division of Water Quality converted the information into a digital GIS layer. The GIS layer was then revised based upon staff knowledge, and a review of the Department's files, including Treatment Works Approval Permits, engineered planning documents submitted to the Department, and a review of then current GIS Aerial photography for the purposes of refining the location of discharge points. The maps developed with the revised GIS layer were then sent to CSO Permittees who own and/or operate the CSO Points for verification and comment. More recent data was obtained from the permittees in January 2016 and incorporated into the GIS layer.</attraccr>
+        </attracc>
+        <logic>The revised GIS layer was sent to CSO Permittees who own and/or operate the CSO Points for verification and comment.  The permittees submitted revised data in January 2016.</logic>
+        <complete>The latitude and longitude data and physical maps provided to the Department were first used to create the GIS layer. The GIS Layer was then revised based upon staff knowledge, and a review of the Department's files including Treatment Works Approval Permits, engineered planning documents, submitted to the Department, and the review of current GIS Aerial photography for the purposes of refining the location of discharge points. The adjustments were made to the longitude and latitude data to ensure visual consistency with aerial photographic imagery.</complete>
+        <posacc>
+            <horizpa>
+                <horizpar>Locations manually edited using 2012 Orthoimagery to best possible location in the current version.</horizpar>
+            </horizpa>
+        </posacc>
+        <lineage>
+            <procstep>
+                <procdesc>CSO Point discharge locations existed as CSO Point latitude and longitude data and physical maps provided to the Department in Request for Authorizations (RFA) under the General Permit for Combined Sewer Systems and other Individual NJPDES Permit applications. In an effort to consolidate the information into a consistent format easily accessible over the internet, the Division of Water Quality converted the information into a digital GIS layer. The GIS layer was then revised based upon staff knowledge, and a review of the Department's files including Treatment Works Approval Permits, engineered planning documents, submitted to the Department, and the review of current GIS Aerial photography for the purposes of refining the location of discharge points. The maps developed with the revised GIS layer were then sent to CSO Permittees who own and/or operate the CSO Points for verification and comment.  More recent data was obtained from the permittees in January 2016 and incorporated into the GIS layer.</procdesc>
+                <procdate>20111201</procdate>
+            </procstep>
+            <procstep>
+                <procdesc>The layer was updated to add detail to the names of the permittee under the field “Permittee” for  10 records, to change the status for two records under the field “Status”, and to revise the coordinates for 36 records based on new verified outfall coordinates.</procdesc>
+                <procdate>20160706</procdate>
+            </procstep>
+        </lineage>
+    </dataqual>
+    <spdoinfo>
+        <direct>Vector</direct>
+        <ptvctinf>
+            <sdtsterm>
+                <sdtstype>Entity point</sdtstype>
+                <ptvctcnt>212</ptvctcnt>
+            </sdtsterm>
+        </ptvctinf>
+    </spdoinfo>
+    <eainfo>
+        <detailed>
+            <enttyp>
+                <enttypl>Util_NJPDES_CSO</enttypl>
+                <enttypd>Combined Sewer Overflows</enttypd>
+                <enttypds>NJDEP</enttypds>
+            </enttyp>
+            <attr>
+                <attrlabl>OBJECTID</attrlabl>
+                <attrdef>Internal feature number.</attrdef>
+                <attrdefs>ESRI</attrdefs>
+                <attrdomv>
+                    					
+                    <udom>Sequential unique whole numbers that are automatically generated.</udom>
+                    				
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>CSO_ID</attrlabl>
+                <attrdef>Combined NJPDES_NO (New Jersey Pollutant Discharge Elimination System Permit Number) and DSN (Discharge Serial Number)</attrdef>
+                <attrdefs>NJDEP</attrdefs>
+                <attrdomv>
+                    					
+                    <udom>Combined NJPDES_NO (New Jersey Pollutant Discharge Elimination System Permit Number) and DSN (Discharge Serial Number)</udom>
+                    				
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>PERMITTEE</attrlabl>
+                <attrdef>Name of the permittee</attrdef>
+                <attrdefs>NJDEP</attrdefs>
+                <attrdomv>
+                    					
+                    <udom>The name of the permittee who owns the CSO outfall.</udom>
+                    				
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>NJPDES_NO</attrlabl>
+                <attrdef>New Jersey Pollutant Discharge Elimination System Number</attrdef>
+                <attrdefs>NJDEP</attrdefs>
+                <attrdomv>
+                    					
+                    <codesetd>
+                        						
+                        <codesetn>Designated New Jersey Pollutant Discharge Elimination System</codesetn>
+                        						
+                        <codesets>NJDEP</codesets>
+                        					
+                    </codesetd>
+                    				
+                </attrdomv>
+                <attrdomv>
+                    					
+                    <udom>This is the unique number for the NJPDES permit associated with the CSO outfall.</udom>
+                    				
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>DSN</attrlabl>
+                <attrdef>Monitored Location Designator (also referred to as Discharge Serial Number, DSN)</attrdef>
+                <attrdefs>NJDEP</attrdefs>
+                <attrdomv>
+                    					
+                    <udom>The unique three-digit serial number of the CSO outfall.</udom>
+                    				
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>OUTFALL_ALT</attrlabl>
+                <attrdef>Alternate Outfall Name</attrdef>
+                <attrdefs>NJDEP</attrdefs>
+                <attrdomv>
+                    					
+                    <udom>Unique entry representing a site specific name of the location (such as name of the street) where the specified outfall is located.</udom>
+                    				
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>MUNICIPALITY</attrlabl>
+                <attrdef>Outfall Municipality Name</attrdef>
+                <attrdefs>NJDEP</attrdefs>
+                <attrdomv>
+                    					
+                    <udom>The unique entry representing the municipality where the CSO outfall is located.</udom>
+                    				
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>RECV_WATER</attrlabl>
+                <attrdef>Recieving Waterbody</attrdef>
+                <attrdefs>NJDEP</attrdefs>
+                <attrdomv>
+                    					
+                    <udom>Unique entry representing the name of the receiving waterbody for the specified outfall.</udom>
+                    				
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>WMA</attrlabl>
+                <attrdef>Watershed Managment Area Number and Name</attrdef>
+                <attrdefs>NJDEP</attrdefs>
+                <attrdomv>
+                    					
+                    <udom>Unique entry representing the Watershed Management Area number designator and name where the CSO outfall is located.</udom>
+                    				
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>STP</attrlabl>
+                <attrdef>Sewage Treatment Plant Receiving Sewer Flow</attrdef>
+                <attrdefs>NJDEP</attrdefs>
+                <attrdomv>
+                    					
+                    <udom>The unique entry representing the name of the sewage treatment plant that is hydraulically connected to the CSO outfall.</udom>
+                    				
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>STP_NJPDES</attrlabl>
+                <attrdef>Sewage Treatment Plant New Jersey Pollutant Discharge Elimination System Number</attrdef>
+                <attrdefs>NJDEP</attrdefs>
+                <attrdomv>
+                    					
+                    <udom>This is the unique number for the NJPDES permit of the sewage treatment plant that is hydraulically connected to the CSO outfall.</udom>
+                    				
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>SOLIDS_FLOATABLES</attrlabl>
+                <attrdef>Solids/floatables controls present at the outfall?  (Yes/No)</attrdef>
+                <attrdefs>NJDEP</attrdefs>
+                <attrdomv>
+                    					
+                    <edom>
+                        						
+                        <edomv>Yes</edomv>
+                        						
+                        <edomvd>Solids and Floatables Controls are present at the outfall</edomvd>
+                        						
+                        <edomvds>NJDEP</edomvds>
+                        					
+                    </edom>
+                    				
+                </attrdomv>
+                <attrdomv>
+                    					
+                    <edom>
+                        						
+                        <edomv>No</edomv>
+                        						
+                        <edomvd>Solids and Floatables Controls are not present at the outfall</edomvd>
+                        						
+                        <edomvds>NJDEP</edomvds>
+                        					
+                    </edom>
+                    				
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>CSO_PIC1</attrlabl>
+                <attrdef>Picture #1 of the CSO Outfall</attrdef>
+                <attrdefs>NJDEP</attrdefs>
+                <attrdomv>
+                    					
+                    <udom>A unique entry for a link to a picture of the CSO outfall.</udom>
+                    				
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>CSO_PIC2</attrlabl>
+                <attrdef>Picture #2 of the CSO Outfall</attrdef>
+                <attrdefs>NJDEP</attrdefs>
+                <attrdomv>
+                    					
+                    <udom>A unique entry for a link to a picture of the CSO outfall.</udom>
+                    				
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>DMR_URL</attrlabl>
+                <attrdef>Internet link for Outfall Discharge Monitoring Report data</attrdef>
+                <attrdefs>NJDEP</attrdefs>
+                <attrdomv>
+                    					
+                    <udom>A unique entry representing a link to an internet location where Discharge Monitoring Report data can be found and downloaded.</udom>
+                    				
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>CSO_STAT</attrlabl>
+                <attrdef>Use status of the CSO Outfall</attrdef>
+                <attrdefs>NJDEP</attrdefs>
+                <attrdomv>
+                    					
+                    <edom>
+                        						
+                        <edomv>Active, Inactive, Sealed, Eliminated</edomv>
+                        						
+                        <edomvd>Active (outfall is discharging), Inactive (outfall is not discharging) Sealed (outfall is sealed but can be reopened), Eliminated (outfall has been physically removed)</edomvd>
+                        						
+                        <edomvds>NJDEP</edomvds>
+                        					
+                    </edom>
+                    				
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>WEBSITE</attrlabl>
+                <attrdef>Website link associated with CSO outfall</attrdef>
+                <attrdefs>NJDEP</attrdefs>
+                <attrdomv>
+                    					
+                    <udom>The website link for the New Jersey Department of Environmental Protection CSO Program's website dedicated to the Department's CSO Program.</udom>
+                    				
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>LATITUDE</attrlabl>
+                <attrdef>Latitude Coordinate</attrdef>
+                <attrdefs>NJDEP</attrdefs>
+                <attrdomv>
+                    					
+                    <udom>Unique Entry of Latitude in Decimal Degrees</udom>
+                    				
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>LONGITUDE</attrlabl>
+                <attrdef>Longitude Coordinate</attrdef>
+                <attrdefs>NJDEP</attrdefs>
+                <attrdomv>
+                    					
+                    <udom>Unique Entry of Longitude  in Decimal Degrees</udom>
+                    				
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>NORTHING</attrlabl>
+                <attrdef>Latitude of the CSO outfall in NAD 1983 State Plane New Jersey FIPS 2900 feet</attrdef>
+                <attrdefs>NJDEP</attrdefs>
+                <attrdomv>
+                    					
+                    <udom>The unique entry representing the Latitude of the CSO outfall in NAD 1983 State Plane New Jersey FIPS 2900 feet.</udom>
+                    				
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>EASTING</attrlabl>
+                <attrdef>Longitude of the CSO outfall in NAD 1983 State Plane New Jersey FIPS 2900 feet.</attrdef>
+                <attrdefs>NJDEP</attrdefs>
+                <attrdomv>
+                    					
+                    <udom>The unique entry representing the Longitude of the CSO outfall in NAD 1983 State Plane New Jersey FIPS 2900 feet.</udom>
+                    				
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>GLOBALID</attrlabl>
+                <attrdef>Internal feature number.</attrdef>
+                <attrdefs>ESRI</attrdefs>
+                <attrdomv>
+                    					
+                    <udom>Unique ID</udom>
+                    				
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>SHAPE</attrlabl>
+                <attrdef>Feature geometry.</attrdef>
+                <attrdefs>ESRI</attrdefs>
+                <attrdomv>
+                    					
+                    <udom>Feature geometry.</udom>
+                    				
+                </attrdomv>
+            </attr>
+        </detailed>
+    </eainfo>
+    <distinfo>
+        <distrib>
+            <cntinfo>
+                <cntorgp>
+                    <cntorg>NJDEP/DOIT/Bureau of GIS</cntorg>
+                    <cntper>GIS Help Desk</cntper>
+                </cntorgp>
+                <cntaddr>
+                    <addrtype>mailing and physical</addrtype>
+                    <address>401 East State Street</address>
+                    <city>Trenton</city>
+                    <state>NJ</state>
+                    <postal>08625</postal>
+                </cntaddr>
+                <cntvoice>(609) 777-0672</cntvoice>
+                <cntemail>gisnet@dep.nj.gov</cntemail>
+            </cntinfo>
+        </distrib>
+        <resdesc>Downloadable Data</resdesc>
+        <distliab>This organization provides the geographic data "as is". This organization makes no guarantee or warranty concerning the accuracy of information contained in the geographic data. Also, this organization makes no warranty either expressed or implied, regarding the condition of the product or its fitness for any particular purpose. The burden for determining fitness for use lies entirely with the user. Although these files have been processed successfully on computers at this organization, no warranty is made by this organization regarding the use of these data on any other system, nor does the fact of distribution constitute or imply any such warranty. See also "Use Constraints" for additional distribution and/or data use requirements.</distliab>
+        <stdorder>
+            <digform>
+                <digtinfo>
+                    <formname>DEP distributes ESRI .SHP and/or GDB. Some data may be NJ GeoWeb "display only" layers.</formname>
+                    <formvern>latest version</formvern>
+                    <filedec>WinZip</filedec>
+                </digtinfo>
+                <digtopt>
+                    <onlinopt>
+                        <computer>
+                            <networka>
+                                <networkr>https://www.nj.gov/dep/gis</networkr>
+                            </networka>
+                        </computer>
+                        <computer>
+                            <networka>
+                                <networkr>https://www.nj.gov/dep/gis/geowebsplash.htm</networkr>
+                            </networka>
+                        </computer>
+                    </onlinopt>
+                </digtopt>
+            </digform>
+            <fees>None</fees>
+            <ordering>All available NJDEP public GIS data can be downloaded for free. Some data shown in NJGeoWeb application may not yet be available for download due to various data or distribution issues. Please email gisnet@dep.nj.gov with any data distribution questions.</ordering>
+        </stdorder>
+    </distinfo>
+    <metainfo>
+        <metd>20180723</metd>
+        <metc>
+            <cntinfo>
+                <cntorgp>
+                    <cntorg>New Jersey Department of Environmental Protection (NJDEP), Division of Water Quality (DWQ), Bureau of Surface Water Permitting</cntorg>
+                    <cntper>Robert Hall</cntper>
+                </cntorgp>
+                <cntaddr>
+                    <addrtype>mailing and physical</addrtype>
+                    <address>401 East State Street</address>
+                    <city>Trenton</city>
+                    <state>NJ</state>
+                    <postal>08625</postal>
+                </cntaddr>
+                <cntvoice>609-292-4860</cntvoice>
+                <cntemail>Robert.Hall@dep.nj.gov</cntemail>
+            </cntinfo>
+        </metc>
+        <metstdn>FGDC Content Standard for Digital Geospatial Metadata</metstdn>
+        <metstdv>FGDC-STD-001-1998</metstdv>
+        <mettc>local time</mettc>
+    </metainfo>
+</metadata>
