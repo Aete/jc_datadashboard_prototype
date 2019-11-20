@@ -22,7 +22,7 @@ $("#header").click(function () {
 
 $("#dropdown-box>p").click(function () {
     neigh_clicked = $(this).attr('id');
-    renew_info(neigh_clicked);
+    renew_info(tract_clicked);
 });
 
 var renew_info = function(neighbor) {
