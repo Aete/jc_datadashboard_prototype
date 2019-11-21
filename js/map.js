@@ -19,7 +19,6 @@ var url_census = 'js/data/censustract.geojson';
 var hoverNeighborhoodId =  null;
 var clicked_feature = null;
 var tract_clicked = '';
-var tract_hovered = '';
 
 
 map.on('load', function () {
@@ -90,8 +89,9 @@ map.on('load', function () {
 });
 
 map.on("click", "censusTract-fill", function(e) {
-    clicked_feature = e.features[0];
-    highlight(clicked_feature)
+    clicked_feature = e.features[0].properties.name;
+    highlight(clicked_feature);
+    renew_info(clicked_feature);
 });
 
 map.on("mouseleave", "censusTract-fill", function() {
@@ -109,30 +109,39 @@ map.on("mousemove","censusTract-fill", function(e) {
         }
         hoverNeighborhoodId = e.features[0].id;
         map.setFeatureState({source: 'census', id: hoverNeighborhoodId}, { hover: true});
-
     }
 });
 
 
 
 var highlight = function(feature){
+
+
+    var tract_filter = tract_feature.features.filter(function(i) {
+        return i.properties.name === feature;
+    });
+
+    var geometry = tract_filter[0];
     if (typeof map.getLayer('selected') !== "undefined" ){
         map.removeLayer('selected');
-        map.removeSource('selectedNeighborhood');
+        map.removeSource('selected_tract');
     }
-    map.addSource('selectedNeighborhood', {
-        "type":"geojson",
-        "data": feature
-    });
+    map.addSource('selected_tract',{'type': 'geojson','data': geometry});
     map.addLayer({
         "id": 'selected',
         "type": "line",
-        "source": 'selectedNeighborhood',
+        "source": 'selected_tract',
         "layout": {
         },
         "paint": {
-            "line-color": "#616161",
-            "line-width": 1
+            "line-color": "#212121",
+            "line-width": 1.5
         }
+    });
+    map.flyTo({
+        center: [
+            censustracts[feature]["center_lng"]+0.008,
+            censustracts[feature]["center_lat"]],
+        zoom: 14
     });
 };

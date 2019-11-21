@@ -24,44 +24,19 @@ main{
 nav{
     display:flex;
     align-items:flex-start;
+    flex-direction:column;
+    border-left:1px solid #212121;
 }
 
 nav>#menu{
     min-width:20%;
 }
+
 .container{
     width:100%;
     height:100%;
     margin: 0;
 }
-
-#header{
-    color: #212121;
-    border-bottom : 1px solid ;
-}
-
-#dropdown{
-    display:flex;
-    cursor: pointer;
-    vertical-align:bottom;
-}
-#dropdown-box{
-    z-index:3;
-    top:40px;
-    position:absolute;
-    background-color:rgba(255,255,255,0.9);
-    color: dimgray;
-    display:none;
-    cursor: pointer;
-}
-
-#dropdown-box>p:hover{
-
-}
-#region{
-    margin-right: 7px;
-}
-
 #map{
     position: relative;
     width:100%;
@@ -73,7 +48,7 @@ nav>#menu{
 
 #graphs{
     position: absolute;
-    width:450px;
+    width:480px;
     height:100vh;
     right:0;
     top:0;
@@ -81,73 +56,173 @@ nav>#menu{
     z-index:3;
     display:flex;
     flex-direction: column;
-    padding-left:10px;
-    padding-right:10px;
+
 }
 
-#graphs>p{
+#tap{
+    width:100%;
+    display:flex;
+    flex-direction:row;
+    justify-content: flex-start;
+}
 
+.button{
+    width:33%;
+    cursor:pointer;
+}
+
+#Charts{
+    text-align: center;
+    border-bottom : 1px dashed #9E9E9E;
+    border-right: 1px solid #212121;
+
+
+}
+
+
+#Action{
+    text-align: center;
+    border-bottom : 1px solid #212121;
+    color: #9E9E9E;
+}
+
+#Action>h4{
+    font-weight:400;
+}
+
+#Action:hover >h4{
+    font-weight:700;
+    color: #212121;
+}
+
+#Resources{
+    text-align: center;
+    border-bottom : 1px solid #212121;
+    color: #9E9E9E;
+}
+
+#Resources>h4{
+    font-weight:400;
+}
+
+#Resources:hover >h4{
+    font-weight:700;
+    color: #212121;
 }
 
 #chart{
-    display:flex;
-    flex-direction: row;
-    height:100%;
-
-}
-
-#chart h3{
-    margin-bottom:5px;
-}
-
-#part_1{
-    width:50%;
-    height:100%;
-}
-
-#part_1_1{
-    text-align:center;
-}
-
-#part_1_2{
-    text-align:center;
-}
-
-#graph1{
-    height:24%;
-    width: 100%;
-    border-bottom : 1px solid  dimgrey;
-}
-
-#graph1-1{
-    padding: 0 10px 12px 0;
-    width:45%;
     text-align: center;
+}
+
+
+#header{
+    color: #212121;
+    border-bottom : 1px dashed #9E9E9E;
+    width : 100%;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    padding-right:10px;
+}
+
+#dropdown_1{
+    width:40%;
+}
+
+#text1{
+    padding-left:10px;
+    display:flex;
+    cursor: pointer;
+    vertical-align:bottom;
+    justify-content: space-between;
+}
+
+#region{
+    margin-right: 7px;
+}
+
+/* this part is for design dropdown box*/
+#text1_box{
+    z-index:3;
+    top:110px;
+    position:absolute;
+    padding-left:10px;
+    background-color:rgba(255,255,255,0.95);
+    color: dimgray;
+    display:none;
+    cursor: pointer;
+    height:300px;
+    overflow-y:scroll;
+}
+
+#text1_box::-webkit-scrollbar-track{
+    background-color: #FFF;
+}
+
+#text1_box::-webkit-scrollbar
+{
+    width : 15px;
+    background-color: slategray;
+}
+
+#text1_box::-webkit-scrollbar-thumb
+{
+
+    border-top : 10px solid white;
+    border-bottom: 10px solid white;
+    border-right : 5px solid white;
+    background-color: slategray;
+}
+
+#text1_box>p:hover{
+    color:#212121;
+    font-weight:bold;
+}
+
+
+#text1_box>p:hover{
 
 }
 
-#graph2{
-    height:24%;
-    border-bottom : 1px solid  dimgrey;
+#dropdown_2{
+    width:55%;
+    margin-right:20px;
 }
-#graph3{
-    height:24%;
-    width: 100%;
-    border-bottom : 1px solid  dimgrey;
+
+#text2{
+    width:100%;
+    display:flex;
+    cursor: pointer;
+    vertical-align:bottom;
+    justify-content: space-between;
+}
+
+
+#text2_box{
+    z-index:3;
+    top:110px;
+    position:absolute;
+    background-color:rgba(255,255,255,0.95);
+    color: dimgray;
+    display:none;
+    cursor: pointer;
+}
+
+
+#attribute{
+    margin-right: 7px;
+}
+
+#information{
+    display:flex;
+    flex-direction: column;
+    height:100%;
+    border-left: 1px solid #212121;
 
 }
-#graph1>p{
-    color: darkgray;
-    font-weight:300;
-    margin-top:7px;
-}
-#graph2>p{
-    color: darkgray;
-    font-weight:300;
-    margin-top:7px;
-}
-#graph3>p{
-    color: darkgray;
-    font-weight:300;
-    margin-top:7px;
+
+#graph{
+    padding-left:10px;
+    padding-right:10px;
+
 }
