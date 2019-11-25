@@ -6,7 +6,7 @@ var palette = {
 var map = new mapboxgl.Map({
     container: 'map',
     style: palette['light']['mapStyle'],
-    center: [-74.030000, 40.720935],
+    center: [-74.070000, 40.715535],
     zoom: 12
 });
 map.addControl(new mapboxgl.NavigationControl(), 'top-left');
@@ -16,9 +16,9 @@ var url_park = 'js/data/park.geojson';
 var url_tree_2019_fall = 'js/data/fall_2019.geojson';
 var url_tree_2019_spring = 'js/data/spring_2019.geojson';
 var url_census = 'js/data/censustract.geojson';
+var url_jc = 'js/data/jerseycity.json';
 var hoverNeighborhoodId =  null;
 var clicked_feature = null;
-var tract_clicked = '';
 
 
 map.on('load', function () {
@@ -27,11 +27,26 @@ map.on('load', function () {
         map.getSource('neighborhood').setData(url_neighborhood);
         map.getSource('census').setData(url_census);
     }, 2000);
+
     map.addSource('park', { type: 'geojson', data: url_park, 'generateId': true});
     map.addSource('neighborhood', { type: 'geojson', data: url_neighborhood, 'generateId': true});
     map.addSource('tree_2019_fall', { type: 'geojson', data: url_tree_2019_fall, 'generateId': true});
     map.addSource('tree_2019_spring', { type: 'geojson', data: url_tree_2019_spring, 'generateId': true});
     map.addSource('census', { type: 'geojson', data: url_census, 'generateId': true});
+
+    map.addSource('selected_tract',{'type': 'geojson','data': url_jc});
+    map.addLayer({
+        "id": 'selected',
+        "type": "line",
+        "source": 'selected_tract',
+        "layout": {
+        },
+        "paint": {
+            "line-color": "#212121",
+            "line-width": 1.5
+        }
+    });
+
 
 
     map.addLayer({
@@ -140,8 +155,31 @@ var highlight = function(feature){
     });
     map.flyTo({
         center: [
-            censustracts[feature]["center_lng"]+0.008,
+            censustracts[feature]["center_lng"],
             censustracts[feature]["center_lat"]],
         zoom: 14
+    });
+};
+
+var highlight_jc=function(){
+    if (typeof map.getLayer('selected') !== "undefined" ){
+        map.removeLayer('selected');
+        map.removeSource('selected_tract');
+    }
+    map.addSource('selected_tract',{'type': 'geojson','data': url_jc});
+    map.addLayer({
+        "id": 'selected',
+        "type": "line",
+        "source": 'selected_tract',
+        "layout": {
+        },
+        "paint": {
+            "line-color": "#212121",
+            "line-width": 1.5
+        }
+    });
+    map.flyTo({
+        center: [-74.070000, 40.715535],
+        zoom: 12
     });
 };
