@@ -18,24 +18,20 @@
                 </div>
                 <div id = 'dropdown_att'>
                     <div id="text_att">
-                        <h4> <span id="attribute">Overall Score</span>  <span style="font-size:0.8em;">&#9660;</span></h4>
+                        <h4> <span id="attribute">Map</span>  <span style="font-size:0.8em;">&#9660;</span></h4>
                     </div>
                     <div id="text_att_box">
+                        <p>Map</p>
                         <p>Overall Score</p>
                         <p>Impervious Area Ratio</p>
                         <p>Flood Risk</p>
-                        <p>Green Infrastructure Score</p>
+                        <p>Green View Score</p>
                     </div>
                     <div id="legend">
                     </div>
                 </div>
             </div>
             <div id="graphs">
-                        <div id="tap">
-                            <div class="button" id="chart"><h4 style="margin-top:15px; margin-bottom:15px">Charts</h4></div>
-                            <div class="button" id="action"><h4 style="margin-top:15px; margin-bottom:15px">Take Actions</h4></div>
-                            <div class="button" id="resource"><h4 style="margin-top:15px; margin-bottom:15px">Resources</h4></div>
-                        </div>
                 <div id="header" style="border-left:1px solid #212121;">
                     <div id = 'dropdown_tract'>
                         <div id="text_tract">
@@ -47,30 +43,26 @@
                     </div>
                 </div>
 
-
                 <div id='chart_info'>
-
                     <div id="graph">
                         <div id="first_row">
                             <div id="Overall" style="display:flex; flex-direction: column">
                                 <h4 style="margin:15px 0 10px 0;">Overall</h4>
-                                <div id="overall_graph"></div>
+                                <div id="overall_graph" class = 'barchart'></div>
                             </div>
                             <div id="GIAR">
-                                <h4 style="margin:15px 0 10px 0;">Green Infrastructure</h4>
-                                <div id="gi_graph"></div>
+                                <h4 style="margin:15px 0 10px 0;">Greenview score </h4>
+                                <div id="gi_graph"  class = 'barchart'></div>
                             </div>
                         </div>
                         <div id="second_row">
                             <div id="IAR">
                                 <h4 style="margin:5px 0 10px 0;">Impervious Area Ratio</h4>
-                                <div id="impervious_graph"></div>
+                                <div id="impervious_graph"  class = 'barchart'></div>
                             </div>
-
-
                             <div id="flood">
-                                <h4 style="margin:5px 0 10px 0;">Flood</h4>
-                                <div id="flood_graph"></div>
+                                <h4 style="margin:5px 0 10px 0;">Flood risk</h4>
+                                <div id="flood_graph"  class = 'barchart'></div>
                             </div>
 
                         </div>
@@ -92,7 +84,7 @@
 
 
 <script>
-    mapboxgl.accessToken = '';
+    mapboxgl.accessToken = 'pk.eyJ1Ijoic2doYW4iLCJhIjoiY2szamxrZGxwMGtjeTNibG10ZDE4ZXhiMCJ9.Kvn0rglozippdrB3L5pHVQ';
 
 </script>
 <script src="js/data/dataset1.js"></script>

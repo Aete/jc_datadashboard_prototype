@@ -263,8 +263,8 @@ g>text{
     display:flex;
     flex-direction:column;
     border-bottom:  1px dashed #9E9E9E;
-    padding-left:20px;
-    padding-right:20px;
+    padding-left:15px;
+    padding-right:15px;
 }
 
 #first_row{
@@ -279,7 +279,7 @@ g>text{
 }
 
 #flood{
-    padding-left:30px;
+    padding-left:50px;
     height:195px;
 }
 
@@ -299,7 +299,7 @@ g>text{
 }
 
 #GIAR{
-    padding-left:30px;
+    padding-left:50px;
     height:200px;
 }
 /* This is for #action_info div*/

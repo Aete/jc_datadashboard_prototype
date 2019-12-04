@@ -1,5 +1,4 @@
 // this part is for dropdown menu
-
 var drop_click = 0;
 var drop2_click = 0;
 var current_id= "#chart";
@@ -49,7 +48,7 @@ var dropbox_making = function(dict_) {
     }
 };
 
-dropbox_making(censustracts);
+dropbox_making(tract_info);
 
 $("#text_tract").click(function () {
     if (drop_click===0){
@@ -82,7 +81,9 @@ $("#text_tract_box>p").click(function () {
     }
 });
 
-
+var chart_clean = function(){
+    $('.barchart').html('');
+};
 
 var renew_info = function(tract) {
     console.log(tract);
@@ -92,6 +93,13 @@ var renew_info = function(tract) {
     else{
         $("#region").text("Census Tract "+ tract);
     }
+
+    var tract_filter = tract_info[tract];
+    chart_clean();
+    overall_chart_generating(tract_filter["overall_score"], tract);
+    gi_chart_generating(tract_filter["green_score"], tract);
+    impervious_chart_generating(tract_filter["imp_score"],tract);
+    flood_chart_generating(tract_filter["flood_score"],tract);
 };
 
 $("#text_att").click(function () {
@@ -115,4 +123,5 @@ $("#text_att_box>p").click(function () {
 
 var renew_info_2 = function(att_clicked) {
     $("#attribute").text(att_clicked);
+    change_grid_layer(att_clicked);
 };
