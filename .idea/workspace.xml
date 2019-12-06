@@ -16,9 +16,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="CSS File" />
         <option value="package_json" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -46,6 +46,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\hsg82\Documents\GitHub\jc_datadashboard_prototype\css" />
       <recent name="C:\Users\hsg82\Documents\Civic_map_proto\js\data" />
     </key>
   </component>
@@ -188,6 +189,14 @@
       <workItem from="1575469065194" duration="1498000" />
       <workItem from="1575484366248" duration="390000" />
       <workItem from="1575489742823" duration="7740000" />
+      <workItem from="1575505735920" duration="606000" />
+      <workItem from="1575518427131" duration="997000" />
+      <workItem from="1575559141280" duration="3930000" />
+      <workItem from="1575580880334" duration="6108000" />
+      <workItem from="1575595143104" duration="1708000" />
+      <workItem from="1575598603744" duration="17595000" />
+      <workItem from="1575618472868" duration="4989000" />
+      <workItem from="1575643707827" duration="159000" />
     </task>
     <servers />
   </component>

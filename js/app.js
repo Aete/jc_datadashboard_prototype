@@ -2,41 +2,7 @@
 var drop_click = 0;
 var drop2_click = 0;
 var current_id= "#chart";
-// This is for tap button
-$(".button").click(function(){
-   var target_button = '#'+$(this).attr('id');
-   $(current_id).css('border-bottom','1px solid #212121');
-   $(current_id).css('border-right','0');
-   $(current_id).css('border-left','0');
-   $(current_id+'>h4').css('font-weight','400');
-   $(current_id+'>h4').css('color','#9E9E9E');
 
-   $(target_button).css('border-bottom','1px dashed #9E9E9E');
-   $(target_button).css('border-right','1px solid #212121');
-   $(target_button).css('border-left','1px solid #212121');
-   $(target_button+'>h4').css('font-weight','700');
-   $(target_button+'>h4').css('color','#212121');
-
-   if(target_button==='#chart'){
-       $('#chart_info').css('display','flex');
-       $('#resource_info').css('display','none');
-       $('#action_info').css('display','none');
-       $('#header').css('display','flex');
-   }
-   else if(target_button==='#action'){
-       $('#chart_info').css('display','none');
-       $('#resource_info').css('display','none');
-       $('#action_info').css('display','flex');
-       $('#header').css('display','flex');
-   }
-   else{
-       $('#chart_info').css('display','none');
-       $('#resource_info').css('display','flex');
-       $('#action_info').css('display','none');
-       $('#header').css('display','none');
-   }
-   current_id = target_button;
-});
 
 
 // This is about dropbox menus
@@ -98,8 +64,15 @@ var renew_info = function(tract) {
     chart_clean();
     overall_chart_generating(tract_filter["overall_score"], tract);
     gi_chart_generating(tract_filter["green_score"], tract);
-    impervious_chart_generating(tract_filter["imp_score"],tract);
+    impervious_chart_generating(tract_filter["imp_percent"],tract);
     flood_chart_generating(tract_filter["flood_score"],tract);
+
+    $('#num_tree').text(tract_filter["treecountestimate"]);
+    $("#total_benefit_tree").text((Math.round((Math.round(tract_filter["treecountestimate"]*67.657)/100))*100).toLocaleString());
+    $('#water_captured_tree').text(tract_filter["storwater_managed"].toLocaleString());
+    $('#energy_conserved_tree').text((Math.round((Math.round(tract_filter["treecountestimate"]*969.025)/100))*100).toLocaleString());
+    $('#co2_removed_tree').text((Math.round((Math.round(tract_filter["treecountestimate"]*454.072)/100))*100).toLocaleString());
+    $('#air_improved_tree').text((Math.round((Math.round(tract_filter["treecountestimate"]*1.811)/100))*100).toLocaleString());
 };
 
 $("#text_att").click(function () {
@@ -125,3 +98,26 @@ var renew_info_2 = function(att_clicked) {
     $("#attribute").text(att_clicked);
     change_grid_layer(att_clicked);
 };
+
+// this part is for take action animation
+
+var take_action = 0;
+
+$("#action").click(function(){
+    if(take_action===0){
+        $("#graphs").css("animation","move 0.7s");
+        $("#graphs").css("top","calc(-100% + 40px)");
+        $("#scroll_button").html('<span style="font-family: fontello" id="scroll_button"></span>');
+        take_action = 1;
+        console.log(take_action);
+    }
+    else{
+        $("#graphs").css("animation","moveback 0.7s");
+        $("#graphs").css("top","0");
+        $("#scroll_button").html('TAKE ACTION &nbsp&nbsp&nbsp<span style="font-family: fontello" id="scroll_button"></span>');
+        take_action = 0;
+        console.log(take_action);
+    }
+});
+
+

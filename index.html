@@ -7,8 +7,11 @@
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.0/mapbox-gl.css' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js'></script>
+    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.css' type='text/css' />
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="https://d3js.org/d3.v4.js"></script>
+    <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
 </head>
 <body>
     <main>
@@ -29,10 +32,11 @@
                     </div>
                     <div id="legend">
                     </div>
+
                 </div>
             </div>
             <div id="graphs">
-                <div id="header" style="border-left:1px solid #212121;">
+                <div id="header">
                     <div id = 'dropdown_tract'>
                         <div id="text_tract">
                             <h4 style="margin-top:15px; margin-bottom:15px;"> <span id="region">Jersey City</span>  <span style="font-size:0.8em;">&#9660;</span></h4>
@@ -41,6 +45,7 @@
                             <p id="JC"> Jersey City</p>
                         </div>
                     </div>
+                    <div id='geocoder' class='geocoder'></div>
                 </div>
 
                 <div id='chart_info'>
@@ -57,7 +62,7 @@
                         </div>
                         <div id="second_row">
                             <div id="IAR">
-                                <h4 style="margin:5px 0 10px 0;">Impervious Area Ratio</h4>
+                                <h4 style="margin:5px 0 10px 0;">Impervious Area Ratio (%)</h4>
                                 <div id="impervious_graph"  class = 'barchart'></div>
                             </div>
                             <div id="flood">
@@ -66,17 +71,74 @@
                             </div>
 
                         </div>
-                    </div>
-                    <div id="recommendation">
+
+                        <a href='https://www.opentreemap.org/jctrees/map/' style="display:block; width:100%; color:#848484; margin-top:5px; font-size:12px; text-align: right;">How did we calculate? &nbsp &#9654;</a>
 
                     </div>
+
+                    <div id="tree_benefit">
+                            <h4>Estimated Number of Trees: <span id="num_tree"></span></h4>
+                            <h4 style="font-weight:300;">&#183; &nbsp Total annual benefits ($): <span id="total_benefit_tree"></span></h4>
+                            <h4 style="font-weight:300;">&#183; &nbsp Stormwater Captured (gal/year): <span id="water_captured_tree"></span></h4>
+                            <h4 style="font-weight:300;">&#183; &nbsp Energy conserved (kwh/year): <span id="energy_conserved_tree"></span></h4>
+                            <h4 style="font-weight:300;">&#183; &nbsp Air quality improved (lbs/year): <span id="air_improved_tree"></span></h4>
+                            <h4 style="font-weight:300;">&#183; &nbsp CO2 removed (lbs/year): <span id="co2_removed_tree"></span></h4>
+                            <a href='https://www.opentreemap.org/jctrees/map/' style="display:block; width:100%; color:#848484; font-size:12px; text-align: right;">Using average values of trees in Open Tree Map Jersey City &nbsp &#9654;</a>
+                    </div>
+
+                    <div id="action" style="border-top: 1px dashed #969696; border-bottom: 1px dashed #969696; height:40px; display:flex; flex-direction: row; align-items: center; justify-content: center;">
+                        <h4 id='scroll_button' style = 'font-size:17px; margin: 5px 0 5px 0;'>TAKE ACTION &nbsp&nbsp&nbsp<span style="font-family: fontello" ></span></h4>
+                    </div>
+                    <div id="action_content">
+                        <div id="recommendation">
+                            <h4 style = 'font-size:17px; padding-left: 15px; margin: 8px 0 8px 0;'>Recommended Green Infrastructure for your area</h4>
+                        </div>
+                        <div id="park_improve">
+                            <h4 style = 'font-size:17px; padding-left: 15px; margin: 8px 0 8px 0;'>Park Improvement Invitation</h4>
+                            <div id="geocoder2"></div>
+                            <p>The nearest park is <span id="nearest_park"></span></p>
+                            <p>Distance from the park is <span id="distance"></span> mi</p>
+                        </div>
+                        <div id="buttons">
+                            <a href="https://seeclickfix.com/web_portal/2k1ssvSpae6TaFxzH6eMTSUr/issues/map?device_os=Portal3-MapWidget&lat=40.7152660944628&lng=-74.068731&max_lat=40.7375024965684&max_lng=-74.01995658874513&min_lat=40.69300399738386&min_lng=-74.1174602508545&zoom=14">
+                            <div id="complaints">
+                                <h4 class='button' style = 'font-size:17px; margin: 8px 0 8px 0;'>Send Opinions & Complaints</h4>
+                            </div>
+                            </a>
+
+                            <a>
+                            <div id="map_trees">
+                                <h4 class='button' style = 'font-size:17px; margin: 8px 0 8px 0;'>Map Trees around your area</h4>
+                            </div>
+                            </a>
+
+                            <a href="https://www.opentreemap.org/jctrees/map/">
+                            <div id="opentreemap">
+                                <h4 class='button' style = 'font-size:17px; margin: 8px 0 8px 0;'>Jersey City Open Tree Map</h4>
+                            </div>
+                            </a>
+
+                            <a href="https://jcmakeitgreen.org/">
+                            <div id="programs">
+                                <h4 class='button' style = 'font-size:17px; margin: 8px 0 8px 0;'>Related Programs (JC Make it Green)</h4>
+                            </div>
+                            </a>
+
+                            <a>
+                            <div id="plz">
+                                <h4 class='button' style = 'font-size:17px; margin: 8px 0 8px 0;'><span> Evaluation of Alternatives (Report) </span></h4>
+                            </div>
+                            </a>
+
+                            <a>
+                            <div id="plz">
+                                <h4 class='button' style = 'font-size:17px; margin: 8px 0 8px 0;'><span>Please one more thing</span></h4>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
-                <div id="action_info">
-                </div>
-
-                <div id="resource_info">
-                </div>
             </div>
     </div>
     </main>
@@ -85,10 +147,10 @@
 
 <script>
     mapboxgl.accessToken = 'pk.eyJ1Ijoic2doYW4iLCJhIjoiY2szamxrZGxwMGtjeTNibG10ZDE4ZXhiMCJ9.Kvn0rglozippdrB3L5pHVQ';
-
 </script>
 <script src="js/data/dataset1.js"></script>
 <script src="js/graph.js"></script>
 <script src="js/app.js"></script>
 <script src="js/map.js"></script>
+<script></script>
 </html>

@@ -1,3 +1,14 @@
+@font-face {
+    font-family: 'fontello';
+    src: url('./font/fontello.eot?41680381');
+    src: url('./font/fontello.eot?41680381#iefix') format('embedded-opentype'),
+    url('./font/fontello.woff?41680381') format('woff'),
+    url('./font/fontello.ttf?41680381') format('truetype'),
+    url('./font/fontello.svg?41680381#fontello') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html{
     height: 100vh;
     margin: 0;
@@ -47,7 +58,7 @@ g>text{
 /* This part is for the drawing(left) part*/
 
 #drawing{
-    width:calc(100% - 400px);
+    width:calc(100% - 432px);
     height: 100%;
     margin: 0;
     display:flex;
@@ -61,8 +72,8 @@ g>text{
 
 #dropdown_att{
     width:230px;
-    top:10px;
-    right:470px;
+    top:6px;
+    right:420px;
     position: absolute;
     margin-right:20px;
     z-index:2;
@@ -89,7 +100,7 @@ g>text{
 #text_att_box{
     width:100%;
     z-index:3;
-    top:39px;
+    top:40px;
     position:absolute;
     background-color:rgba(255,255,255,0.95);
     color: dimgray;
@@ -119,67 +130,37 @@ g>text{
 /* This part is for the board(right) part*/
 
 #graphs{
-    width:460px;
-    height:100vh;
+    position:absolute;
+    top:0;
+    right:0;
+    width:432px;
+    height:calc(200% - 50px);
+    border-left: 1px solid #212121;
     background-color:rgba(255,255,255,0.8);
     display:flex;
     flex-direction: column;
 
 }
 
-/* Part2-1 Tap*/
 
-#tap{
-    width:100%;
-    display:flex;
-    flex-direction:row;
-    justify-content: flex-start;
+@keyframes move{
+    from {
+        top:0;
+    }
+
+    to {
+        top: calc(-100% + 40px);
+    }
 }
 
-.button{
-    width:33%;
-    cursor:pointer;
-}
+@keyframes moveback {
+    from {
+        top:calc(-100% + 40px);
+    }
 
-#chart{
-    text-align: center;
-    border-bottom : 1px dashed #9E9E9E;
-    border-left:1px solid #212121;
-    border-right: 1px solid #212121;
-}
-
-#chart:hover>h4{
-    font-weight:700;
-}
-
-#action{
-    text-align: center;
-    border-bottom : 1px solid #212121;
-    color: #9E9E9E;
-}
-
-#action>h4{
-    font-weight:400;
-}
-
-#action:hover >h4{
-    font-weight:700;
-    color: #212121;
-}
-
-#resource{
-    text-align: center;
-    border-bottom : 1px solid #212121;
-    color: #9E9E9E;
-}
-
-#resource>h4{
-    font-weight:400;
-}
-
-#resource:hover >h4{
-    font-weight:700;
-    color: #212121;
+    to {
+        top:0;
+    }
 }
 
 
@@ -188,15 +169,20 @@ g>text{
 #header{
     color: #212121;
     border-bottom : 1px dashed #9E9E9E;
+    height: 50px;
     width : 100%;
     display:flex;
     flex-direction:row;
-    justify-content: space-between;
+    align-content: space-between;
+    align-items: center;
     padding-right:10px;
 }
+
 #dropdown_tract{
     width:250px;
-    margin-right:50px;
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
 }
 
 #text_tract{
@@ -215,7 +201,7 @@ g>text{
 /* this part is for design dropdown box*/
 #text_tract_box{
     z-index:3;
-    top:110px;
+    top:40px;
     position:absolute;
     padding-left:10px;
     background-color:rgba(255,255,255,0.95);
@@ -256,11 +242,11 @@ g>text{
     display:flex;
     flex-direction: column;
     height:100%;
-    border-left: 1px solid #212121;
 
 }
 #graph{
     display:flex;
+    height: 410px;
     flex-direction:column;
     border-bottom:  1px dashed #9E9E9E;
     padding-left:15px;
@@ -275,12 +261,12 @@ g>text{
 
 #Overall{
 
-    height:200px;
+    height:195px;
 }
 
 #flood{
-    padding-left:50px;
-    height:195px;
+    padding-left:25px;
+    height:180px;
 }
 
 #flood>h4{
@@ -290,33 +276,90 @@ g>text{
 #second_row{
     width:100%;
     display:flex;
+    padding-top:5px;
     flex-direction: row;
 }
 
 #IAR{
-
-    height:195px;
+    height:180px;
 }
 
 #GIAR{
-    padding-left:50px;
+    padding-left:25px;
+    height:195px;
+}
+
+/* This part is for stormwater part*/
+
+#tree_benefit{
+    height:calc(100vh - 505px);
+    padding-left:15px;
+
+}
+
+#tree_benefit>h4{
+    margin:15px 0 15px 0;
+}
+
+#tree_benefit>h4>span{
+    font-weight:700;
+}
+
+#action_content>div{
+}
+
+#recommendation{
+    height:190px;
+    border-bottom:1px dashed #212121;
+}
+
+#park_improve{
     height:200px;
+    border-bottom:1px dashed #212121;
 }
-/* This is for #action_info div*/
-#action_info{
-    display:none;
-    flex-direction: column;
-    height:100%;
-    border-left: 1px solid #212121;
-
+#action:hover{
+    background-color: #303030;
+    color:white;
 }
 
-/* This is for #resource_info div*/
-#resource_info{
-    display:none;
-    flex-direction: column;
-    height:100%;
-    border-left: 1px solid #212121;
-
+#buttons>a{
+    text-decoration: none;
+    color:#212121;
 }
 
+#buttons>a>div{
+    border-bottom:1px dashed #212121;
+    height:50px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#buttons>a>div:hover{
+    background-color: #303030;
+    color:white;
+}
+
+#buttons>div{
+    border-bottom:1px dashed #212121;
+    height:50px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h4.button{
+    width:100%;
+    padding-left:0;
+    text-align:center;
+    height:20px;
+}
+
+#buttons>div:hover{
+    background-color: #303030;
+    color:white;
+}
+
+h4.span{
+    vertical-align: middle;
+}

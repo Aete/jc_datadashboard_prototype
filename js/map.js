@@ -9,6 +9,89 @@ var map = new mapboxgl.Map({
     center: [-74.070000, 40.715535],
     zoom: 12
 });
+
+var geocoder = new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken,
+    mapboxgl: mapboxgl,
+    marker: true,
+    flyTo: {
+        zoom: 14,
+        speed: 1, // make the flying slow
+        curve: 1, // change the speed at which it zooms out
+        easing: function (t) { return t; }
+    },
+});
+
+
+var geocoder2 = new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken,
+    mapboxgl: mapboxgl,
+    marker: true,
+    flyTo: {
+        zoom: 16,
+        speed: 3, // make the flying slow
+        curve: 1, // change the speed at which it zooms out
+        easing: function (t) { return t; }
+    },
+});
+
+geocoder.on('result', function (e){
+    var coord_ = map.project(e.result.geometry.coordinates);
+    var tract_searched = map.queryRenderedFeatures(coord_, {
+        layers: ["censusTract-fill"]
+    })[0].properties.name;
+    highlight(tract_searched);
+    renew_info(tract_searched);
+});
+
+geocoder2.on('result', function (e){
+    var coord_ = e.result.geometry.coordinates;
+    console.log(coord_);
+    var finding_park = find_nearest_park(coord_);
+    console.log(finding_park);
+    $('#nearest_park').text(finding_park[0]);
+    $('#distance').text(finding_park[1].toFixed(2));
+    var park_coord_ = map.project([finding_park[2],finding_park[3]]);
+    var park_searched = map.queryRenderedFeatures(park_coord_, {
+        layers: ["park_fill"]
+    })[0].properties.park;
+
+    var park_filter = park_features.features.filter(function(i) {
+        return i.properties.park === park_searched;
+    });
+
+    var geometry = park_filter[0];
+    console.log(geometry);
+    if (typeof map.getLayer('selected_park') !== "undefined" ){
+        map.removeLayer('selected_park');
+        map.removeSource('selected_park');
+    }
+
+    map.addSource('selected_park',{'type': 'geojson','data': geometry});
+    map.addLayer({
+        "id": 'selected_park',
+        "type": "fill",
+        "source": 'selected_park',
+        "layout": {
+        },
+        "paint": {
+            "fill-color": "#1B5E20",
+            "fill-opacity":0.7
+        }
+    });
+});
+
+
+
+$('#geocoder').append(geocoder.onAdd(map));
+$('#geocoder2').append(geocoder2.onAdd(map));
+$('#geocoder>.mapboxgl-ctrl-geocoder').css('box-shadow','none');
+$('#geocoder>.mapboxgl-ctrl-geocoder>input').attr('placeholder','Search by address');
+$('#geocoder2>.mapboxgl-ctrl-geocoder').css('box-shadow','none');
+$('#geocoder2>.mapboxgl-ctrl-geocoder').css('width','100%');
+$('#geocoder2>.mapboxgl-ctrl-geocoder>input').attr('placeholder','Search the nearest park your area');
+$('#geocoder2>.mapboxgl-ctrl-geocoder>input').css('width','100%');
+
 map.addControl(new mapboxgl.NavigationControl(), 'top-left');
 
 var url_neighborhood = 'js/data/neighborhoods.geojson';
@@ -39,7 +122,17 @@ map.on('load', function () {
     map.addSource('selected_tract',{'type': 'geojson','data': url_jc});
 
 
-
+    map.addLayer({
+        "id": "park_fill",
+        "source": "park",
+        "type": "fill",
+        "layout": {
+        },
+        "paint": {
+            "fill-color": palette['light']['boarder_color'],
+            "fill-opacity":0
+        }
+    });
 
 
     map.addLayer({
@@ -130,6 +223,7 @@ var highlight = function(feature){
         map.removeLayer('selected');
         map.removeSource('selected_tract');
     }
+    console.log(geometry);
     map.addSource('selected_tract',{'type': 'geojson','data': geometry});
     map.addLayer({
         "id": 'selected',
@@ -196,8 +290,8 @@ var change_grid_layer=function(attr){
                     ['linear'],
                     ['get', 'overall_score'],
                     0, '#F44336',
-                    3, '#FFFFF2',
-                    5, '#1565c0'
+                    3, '#FFF082',
+                    5, '#1B5B20'
                 ],
                 "fill-opacity": 0.7
             }
@@ -268,4 +362,25 @@ var change_grid_layer=function(attr){
     }
 };
 
+var park_keys = Object.keys(park_center_points);
+var options = { units: 'miles' };
+var find_nearest_park = function(coord){
+  var x = coord[0];
+  var y = coord[1];
+  var nearest_park = null;
+  var best_key = null;
+  var nearest_dist = 100;
+  for(key of park_keys){
+      var dist_ = turf.distance(coord, [parseFloat(park_center_points[key]['center_lng']),parseFloat(park_center_points[key]['center_lat'])], options);
+      console.log(dist_);
+      console.log(nearest_dist);
+      if(dist_<nearest_dist){
+          console.log('!');
+          nearest_park = park_center_points[key]['park'];
+          nearest_dist = dist_ ;
+          best_key = key;
+      }
 
+  }
+  return [park_center_points[best_key]['park'],nearest_dist, park_center_points[best_key]['center_lng'], park_center_points[best_key]['center_lat']]
+};
