@@ -50,7 +50,7 @@ geocoder2.on('result', function (e){
     var finding_park = find_nearest_park(coord_);
     console.log(finding_park);
     $('#nearest_park').text(finding_park[0]);
-    $('#distance').text(finding_park[1].toFixed(2));
+    $('#distance').text(finding_park[1].toFixed(2)+' mi');
     var park_coord_ = map.project([finding_park[2],finding_park[3]]);
     var park_searched = map.queryRenderedFeatures(park_coord_, {
         layers: ["park_fill"]
@@ -79,6 +79,7 @@ geocoder2.on('result', function (e){
             "fill-opacity":0.7
         }
     });
+    change_grid_layer('Map');
 });
 
 
@@ -96,9 +97,7 @@ map.addControl(new mapboxgl.NavigationControl(), 'top-left');
 
 var url_neighborhood = 'js/data/neighborhoods.geojson';
 var url_park = 'js/data/park.geojson';
-var url_tree_2019_fall = 'js/data/fall_2019.geojson';
-var url_tree_2019_spring = 'js/data/spring_2019.geojson';
-var url_census = 'js/data/test2.geojson';
+var url_census = 'js/data/tracts.geojson';
 var url_jc = 'js/data/jerseycity.json';
 var url_grid = 'js/data/grid_1204.geojson';
 var hoverNeighborhoodId =  null;
@@ -114,8 +113,6 @@ map.on('load', function () {
 
     map.addSource('park', { type: 'geojson', data: url_park, 'generateId': true});
     map.addSource('neighborhood', { type: 'geojson', data: url_neighborhood, 'generateId': true});
-    map.addSource('tree_2019_fall', { type: 'geojson', data: url_tree_2019_fall, 'generateId': true});
-    map.addSource('tree_2019_spring', { type: 'geojson', data: url_tree_2019_spring, 'generateId': true});
     map.addSource('census', { type: 'geojson', data: url_census, 'generateId': true});
     map.addSource('grid', { type: 'geojson', data: url_grid, 'generateId': true});
 

@@ -120,12 +120,43 @@ g>text{
 #legend{
     position: absolute;
     width:230px;
-    height:200px;
+    height:190px;
     top:45px;
     margin-right:20px;
     z-index:1;
     background-color:rgba(255,255,255,0.9);
+    padding-top:10px;
 }
+
+#legend>div{
+    height:32px;
+    margin: 0 0 0 10px;
+    display:flex;
+    align-content: center;
+}
+
+#legend>div>h5{
+    margin: 5px 0 5px 0;
+    height:20px;
+}
+
+#legend>div>p>{
+    vertical-align: middle;
+    display:inline;
+}
+
+#legend>div>div>span{
+    font-size:20px;
+    vertical-align: middle;
+}
+
+
+.color_square{
+    height:30px;
+    font-size:30px;
+}
+
+
 
 /* This part is for the board(right) part*/
 
