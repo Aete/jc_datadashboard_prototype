@@ -21,10 +21,10 @@
                 </div>
                 <div id = 'dropdown_att'>
                     <div id="text_att">
-                        <h4> <span id="attribute">Map</span>  <span style="font-size:0.8em;">&#9660;</span></h4>
+                        <h4> <span id="attribute">Select Grid Type</span>  <span style="font-size:0.8em;">&#9660;</span></h4>
                     </div>
                     <div id="text_att_box">
-                        <p>Map</p>
+                        <p id="map_att">Map</p>
                         <p>Overall Score</p>
                         <p>Impervious Area Ratio</p>
                         <p>Flood Risk</p>
@@ -56,7 +56,10 @@
                 </div>
 
                 <div id='chart_info'>
-                    <div id="graph">
+                    <div id ='jc_graph'>
+
+                    </div>
+                    <div id="tract_graph">
                         <div id="first_row">
                             <div id="Overall" style="display:flex; flex-direction: column">
                                 <h4 style="margin:15px 0 10px 0;">Overall</h4>
@@ -84,8 +87,8 @@
                     </div>
 
                     <div id="tree_benefit">
-                            <h4>Estimated Number of Trees: <span id="num_tree"></span></h4>
-                            <h4 style="font-weight:300;">&#183; &nbsp Total annual benefits ($): <span id="total_benefit_tree"></span></h4>
+                            <h4 style="color:#33691e; ">Estimated Number of Trees: <span id="num_tree"></span></h4>
+                            <h4 style="font-weight:300; ">&#183; &nbsp Total annual benefits ($): <span id="total_benefit_tree"></span></h4>
                             <h4 style="font-weight:300;">&#183; &nbsp Stormwater Captured (gal/year): <span id="water_captured_tree"></span></h4>
                             <h4 style="font-weight:300;">&#183; &nbsp Energy conserved (kwh/year): <span id="energy_conserved_tree"></span></h4>
                             <h4 style="font-weight:300;">&#183; &nbsp Air quality improved (lbs/year): <span id="air_improved_tree"></span></h4>
@@ -93,8 +96,11 @@
                             <a href='https://www.opentreemap.org/jctrees/map/' style="display:block; width:100%; color:#848484; font-size:12px; text-align: right;">Using average values of trees in Open Tree Map Jersey City &nbsp &#9654;</a>
                     </div>
 
-                    <div id="action" style="border-top: 1px dashed #969696; border-bottom: 1px dashed #969696; height:40px; display:flex; flex-direction: row; align-items: center; justify-content: center;">
-                        <h4 id='scroll_button' style = 'font-size:17px; margin: 5px 0 5px 0;'>TAKE ACTION &nbsp&nbsp&nbsp<span style="font-family: fontello" ></span></h4>
+                    <div id="action">
+                        <h4 id='scroll_button' style = 'font-size:17px; margin: 5px 0 5px 0;'>
+                            TAKE ACTION &nbsp&nbsp&nbsp
+                            <span style="font-family: fontello" ></span>
+                        </h4>
                     </div>
                     <div id="action_content">
                         <div id="recommendation">
@@ -103,9 +109,11 @@
                         <div id="park_improve">
                             <h4 style = 'font-size:17px; padding-left: 15px; margin: 8px 0 8px 0;'>Park Improvement Invitation</h4>
                             <div id="geocoder2"></div>
-                            <p style="padding-left:10px;">- The nearest park is <span id="nearest_park"></span></p>
-                            <p style="padding-left:10px;">- Distance from the park is <span id="distance"></span> </p>
-                            <div style="display:flex; justify-content:center; width:100%"> <a style="width:30%;"><div style="border:1px solid #424242;" ><p style="text-align:center; margin:0 0 0 0;">Save JC <br> Park</p></div></a></div>
+                            <p style="padding-left:10px;">- The nearest park is <span id="nearest_park"> --- </span></p>
+                            <p style="padding-left:10px;">- Distance from the park is <span id="distance"> --- </span> </p>
+                            <a href="http://jcparks.org/how-to-start-a-park-group/">
+                            <div style="display:flex; justify-content:center; width:100%"> <a style="width:30%;"><div style="border:1px solid #424242;" ><p style="text-align:center; margin:0 0 0 0;">Let's Improve</p></div></a></div>
+                            </a>
                         </div>
                         <div id="buttons">
                             <a href="https://seeclickfix.com/web_portal/2k1ssvSpae6TaFxzH6eMTSUr/issues/map?device_os=Portal3-MapWidget&lat=40.7152660944628&lng=-74.068731&max_lat=40.7375024965684&max_lng=-74.01995658874513&min_lat=40.69300399738386&min_lng=-74.1174602508545&zoom=14",target="_blank">
@@ -133,13 +141,12 @@
                             </a>
 
                             <a href="http://jcmakeitgreen.org/wp-content/uploads/2019/03/YOW_brochure_REVISED2019.pdf" target="_blank">
-                            <div id="plz">
+                            <div>
                                 <h4 class='button' style = 'font-size:17px; margin: 8px 0 8px 0;'><span> About CSO </span></h4>
                             </div>
                             </a>
-
                             <a href="https://sewagefreenj.org/wp-content/uploads/2019/09/Jersey-Citys-Sewer-System_-Whats-at-Stake.pdf" target="_blank">
-                            <div id="plz">
+                            <div>
                                 <h4 class='button' style = 'font-size:17px; margin: 8px 0 8px 0;'><span>CSO - Whats at Stake?</span></h4>
                             </div>
                             </a>

@@ -44,6 +44,7 @@ geocoder.on('result', function (e){
     renew_info(tract_searched);
 });
 
+var marker = 'undefined';
 geocoder2.on('result', function (e){
     var coord_ = e.result.geometry.coordinates;
     console.log(coord_);
@@ -80,6 +81,12 @@ geocoder2.on('result', function (e){
         }
     });
     change_grid_layer('Map');
+    if(marker!=='undefined'){
+        marker.remove();
+    }
+    marker = new mapboxgl.Marker()
+                .setLngLat([finding_park[2],finding_park[3]])
+                .addTo(map);
 });
 
 
@@ -272,8 +279,11 @@ var change_grid_layer=function(attr){
 
     if(attr==='Map'){
         console.log(attr);
+        $('#legend').css('display','none');
     }
     else if(attr==='Overall Score'){
+        $('#legend').css('display','flex');
+        $('#map_att').css('display','flex');
         map.addLayer({
             "id": "grid",
             "source": "grid",
@@ -296,6 +306,8 @@ var change_grid_layer=function(attr){
     }
 
     else if(attr === 'Flood Risk'){
+        $('#legend').css('display','flex');
+        $('#map_att').css('display','flex');
         map.addLayer({
             "id": "grid",
             "source": "grid",
@@ -317,6 +329,8 @@ var change_grid_layer=function(attr){
     }
 
     else if(attr === 'Green View Score'){
+        $('#legend').css('display','flex');
+        $('#map_att').css('display','flex');
         map.addLayer({
             "id": "grid",
             "source": "grid",
@@ -337,6 +351,8 @@ var change_grid_layer=function(attr){
         },'censusTract-border');
     }
     else{
+        $('#legend').css('display','flex');
+        $('#map_att').css('display','flex');
         map.addLayer({
             "id": "grid",
             "source": "grid",
@@ -362,8 +378,6 @@ var change_grid_layer=function(attr){
 var park_keys = Object.keys(park_center_points);
 var options = { units: 'miles' };
 var find_nearest_park = function(coord){
-  var x = coord[0];
-  var y = coord[1];
   var nearest_park = null;
   var best_key = null;
   var nearest_dist = 100;
@@ -379,5 +393,6 @@ var find_nearest_park = function(coord){
       }
 
   }
+
   return [park_center_points[best_key]['park'],nearest_dist, park_center_points[best_key]['center_lng'], park_center_points[best_key]['center_lat']]
 };

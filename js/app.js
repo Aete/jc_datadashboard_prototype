@@ -1,9 +1,6 @@
 // this part is for dropdown menu
 var drop_click = 0;
 var drop2_click = 0;
-var current_id= "#chart";
-
-
 
 // This is about dropbox menus
 var dropbox_making = function(dict_) {
@@ -27,7 +24,7 @@ $("#text_tract").click(function () {
     }
 });
 
-$("#graph").click(function () {
+$("#tract_graph").click(function () {
     console.log('1');
     $("#text_tract_box").css("display", "none");
     drop_click = 0
@@ -37,13 +34,18 @@ $("#graph").click(function () {
 $("#text_tract_box>p").click(function () {
     var tract_clicked = $(this).attr('id');
     $("#text_tract_box").css("display", "none");
-    drop_click = 0
+    drop_click = 0;
     renew_info(tract_clicked);
     if(tract_clicked==="JC"){
+        $('#tract_graph').css('display','none');
+        $('#jc_graph').css('display','flex');
         highlight_jc();
     }
     else{
+        $('#jc_graph').css('display','none');
+        $('#tract_graph').css('display','flex');
         highlight(tract_clicked);
+
     }
 });
 
@@ -55,24 +57,29 @@ var renew_info = function(tract) {
     console.log(tract);
     if(tract === "JC"){
         $("#region").text("Jersey City");
+        $('#tract_graph').css('display','none');
+        $('#jc_graph').css('display','flex');
     }
     else{
         $("#region").text("Census Tract "+ tract);
+        $('#jc_graph').css('display','none');
+        $('#tract_graph').css('display','flex');
+        var tract_filter = tract_info[tract];
+        chart_clean();
+        overall_chart_generating(tract_filter["overall_score"], tract);
+        gi_chart_generating(tract_filter["green_score"], tract);
+        impervious_chart_generating(tract_filter["imp_percent"],tract);
+        flood_chart_generating(tract_filter["flood_score"],tract);
+
+        $('#num_tree').text(tract_filter["treecountestimate"]);
+        $("#total_benefit_tree").text((Math.round((Math.round(tract_filter["treecountestimate"]*67.657)/100))*100).toLocaleString());
+        $('#water_captured_tree').text(tract_filter["storwater_managed"].toLocaleString());
+        $('#energy_conserved_tree').text((Math.round((Math.round(tract_filter["treecountestimate"]*969.025)/100))*100).toLocaleString());
+        $('#co2_removed_tree').text((Math.round((Math.round(tract_filter["treecountestimate"]*454.072)/100))*100).toLocaleString());
+        $('#air_improved_tree').text((Math.round((Math.round(tract_filter["treecountestimate"]*1.811)/100))*100).toLocaleString());
     }
 
-    var tract_filter = tract_info[tract];
-    chart_clean();
-    overall_chart_generating(tract_filter["overall_score"], tract);
-    gi_chart_generating(tract_filter["green_score"], tract);
-    impervious_chart_generating(tract_filter["imp_percent"],tract);
-    flood_chart_generating(tract_filter["flood_score"],tract);
 
-    $('#num_tree').text(tract_filter["treecountestimate"]);
-    $("#total_benefit_tree").text((Math.round((Math.round(tract_filter["treecountestimate"]*67.657)/100))*100).toLocaleString());
-    $('#water_captured_tree').text(tract_filter["storwater_managed"].toLocaleString());
-    $('#energy_conserved_tree').text((Math.round((Math.round(tract_filter["treecountestimate"]*969.025)/100))*100).toLocaleString());
-    $('#co2_removed_tree').text((Math.round((Math.round(tract_filter["treecountestimate"]*454.072)/100))*100).toLocaleString());
-    $('#air_improved_tree').text((Math.round((Math.round(tract_filter["treecountestimate"]*1.811)/100))*100).toLocaleString());
 };
 
 $("#text_att").click(function () {
@@ -93,6 +100,10 @@ $("#text_att_box>p").click(function () {
     $("#text_att_box").css("display", "none");
     drop2_click = 0
 });
+
+var value_range = {
+
+};
 
 var renew_info_2 = function(att_clicked) {
     $("#attribute").text(att_clicked);
