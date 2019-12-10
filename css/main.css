@@ -290,6 +290,42 @@ g>text{
     padding-right:15px;
 }
 
+#first_row_jc{
+    width:100%;
+    display:flex;
+    flex-direction: row;
+}
+
+#Overall_jc {
+    width: 200px;
+    height:180px;
+    margin-right: 10px;
+}
+
+#IAR_jc{
+    width: 200px;
+    height:180px;
+}
+
+#second_row_jc{
+    width:100%;
+    display:flex;
+    padding-top:5px;
+    flex-direction: column;
+    margin-bottom:3px;
+    border-top: 1px dashed #424242;
+}
+
+#second_row_jc>h4{
+    margin:10px 0 10px 0;
+}
+
+#second_row_jc>p{
+    font-size: 13px;
+    margin:7px 0 7px 0;
+}
+
+
 #tract_graph{
     display:none;
     height: 410px;
