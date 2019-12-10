@@ -125,7 +125,7 @@ g>text{
     margin-right:20px;
     z-index:1;
     background-color:rgba(255,255,255,0.9);
-    padding-top:10px;
+    padding-top:5px;
     display:none;
     flex-direction:column;
 }
@@ -359,8 +359,19 @@ g>text{
     border-bottom:1px dashed #212121;
 }
 
+#Reason{
+    font-weight:300;
+    padding-left:15px;
+}
+
+#recommended_GI{
+    color: #33691e;
+    font-size: 25px;
+    text-align: center;
+}
+
 #park_improve{
-    height:230px;
+    height:210px;
     border-bottom:1px dashed #212121;
 }
 
@@ -422,4 +433,13 @@ h4.button{
 
 h4.span{
     vertical-align: middle;
+}
+
+.percent{
+    display:none;
+}
+
+#improve_button:hover{
+    background-color: #424242;
+    color:#FFFFFF;
 }

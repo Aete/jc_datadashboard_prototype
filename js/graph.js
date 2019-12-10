@@ -1,28 +1,28 @@
-var jc_avg = {'#overall_graph':0,
-              '#gi_graph':0,
-              '#flood_graph':0,
-              '#impervious_graph':0,
+var jc_avg = {'#overall_graph':1.85,
+              '#gi_graph':2.83,
+              '#flood_graph':1.76,
+              '#impervious_graph':83.13,
 
 };
 
 
 var overall_chart_generating = function(feature, tract){
-    chart_generating('#overall_graph',feature, tract,6);
+    chart_generating('#overall_graph',feature, tract,jc_avg['#overall_graph'],6);
                                                 };
 var gi_chart_generating = function(feature, tract){
-    chart_generating('#gi_graph',feature, tract,6);
+    chart_generating('#gi_graph',feature, tract, jc_avg['#gi_graph'],6);
 };
 
 var flood_chart_generating = function(feature, tract){
-    chart_generating('#flood_graph',feature, tract,6);
+    chart_generating('#flood_graph',feature, tract, jc_avg['#flood_graph'], 6);
 };
 
 var impervious_chart_generating = function(feature, tract){
-    chart_generating('#impervious_graph',feature, tract,120);
+    chart_generating('#impervious_graph',feature, tract, jc_avg['#impervious_graph'],120);
 };
 
 
-var chart_generating = function(chart_name,data,tract,scale){
+var chart_generating = function(chart_name,data,tract,avg, scale){
 
     var chart = d3.select(chart_name).append('svg');
     var x_scale = d3.scaleBand().range([0, 145]).domain(['JC Avg.','Tract #'+tract]);
@@ -35,7 +35,7 @@ var chart_generating = function(chart_name,data,tract,scale){
          .attr('height', 140)
          .style('background', 'white')
          .selectAll('rect')
-         .data([4.5,data])
+         .data([avg,data])
          .enter()
          .append('rect')
          .attr('x', function(d,i){return i*(70)+40})
@@ -82,6 +82,15 @@ var grid_generating = function(chart,y_scale,scale){
         chart.append('line').attr('x1', 25).attr('x2', 168).attr('y1', 120 - y_scale(40)).attr('y2', 120 - y_scale(40)).style('stroke', '#BBBBBB').style('stroke-width', 0.2).style("stroke-dasharray", ("4,2"));
         chart.append('line').attr('x1', 25).attr('x2', 168).attr('y1', 120 - y_scale(20)).attr('y2', 120 - y_scale(20)).attr('stroke', '#BBBBBB').attr('stroke-width', 0.2).attr("stroke-dasharray", ("4,2"));
         chart.append('line').attr('x1', 25).attr('x2', 168).attr('y1', 120).attr('y2', 121).attr('stroke', '#BBBBBB').attr('stroke-witdh', 0.2);
+    }
+    else{
+        chart.append('line').attr('x1', 25).attr('x2', 168).attr('y1', 120 - y_scale(30)).attr('y2', 120 - y_scale(30)).style('stroke', '#BBBBBB').style('stroke-width', 0.2).style("stroke-dasharray", ("4,2"));
+        chart.append('line').attr('x1', 25).attr('x2', 168).attr('y1', 120 - y_scale(24)).attr('y2', 120 - y_scale(24)).style('stroke', '#BBBBBB').style('stroke-width', 0.2).style("stroke-dasharray", ("4,2"));
+        chart.append('line').attr('x1', 25).attr('x2', 168).attr('y1', 120 - y_scale(18)).attr('y2', 120 - y_scale(18)).style('stroke', '#BBBBBB').style('stroke-width', 0.2).style("stroke-dasharray", ("4,2"));
+        chart.append('line').attr('x1', 25).attr('x2', 168).attr('y1', 120 - y_scale(12)).attr('y2', 120 - y_scale(12)).style('stroke', '#BBBBBB').style('stroke-width', 0.2).style("stroke-dasharray", ("4,2"));
+        chart.append('line').attr('x1', 25).attr('x2', 168).attr('y1', 120 - y_scale(6)).attr('y2', 120 - y_scale(6)).attr('stroke', '#BBBBBB').attr('stroke-width', 0.2).attr("stroke-dasharray", ("4,2"));
+        chart.append('line').attr('x1', 25).attr('x2', 168).attr('y1', 120).attr('y2', 121).attr('stroke', '#BBBBBB').attr('stroke-witdh', 0.2);
+
     }
 };
 

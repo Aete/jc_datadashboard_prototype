@@ -106,7 +106,7 @@ var url_neighborhood = 'js/data/neighborhoods.geojson';
 var url_park = 'js/data/park.geojson';
 var url_census = 'js/data/tracts.geojson';
 var url_jc = 'js/data/jerseycity.json';
-var url_grid = 'js/data/grid_1204.geojson';
+var url_grid = 'js/data/grid_final.geojson';
 var hoverNeighborhoodId =  null;
 var clicked_feature = null;
 
@@ -298,7 +298,8 @@ var change_grid_layer=function(attr){
                     ['get', 'overall_score'],
                     0, '#F44336',
                     3, '#FFF082',
-                    5, '#1B5B20'
+                    4, '#4CAF50',
+                    5, '#1B5E20'
                 ],
                 "fill-opacity": 0.7
             }
@@ -342,7 +343,7 @@ var change_grid_layer=function(attr){
                 'fill-color': [
                     'interpolate',
                     ['linear'],
-                    ['get', 'green_score'],
+                    ['get', 'greenscore'],
                     0, '#FFFFF2',
                     5, '#1B5B20'
                 ],
@@ -364,12 +365,15 @@ var change_grid_layer=function(attr){
                 'fill-color': [
                     'interpolate',
                     ['linear'],
-                    ['get', 'imp_percent'],
-                    0, '#FFFFFE',
-                    60, '#FFFFFE',
-                    100,'#212121'
+                    ['get', 'imp_score'],
+                    0, '#212121',
+                    1, '#EEEEEE',
+                    2, '#BDBDBD',
+                    3, '#9E9E9E',
+                    4, '#616161',
+                    5,'#FFFFFE'
                 ],
-                "fill-opacity": 0.7
+                "fill-opacity": 0.8
             }
         },'censusTract-border');
     }

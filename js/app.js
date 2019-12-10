@@ -1,6 +1,20 @@
 // this part is for dropdown menu
 var drop_click = 0;
 var drop2_click = 0;
+var jc_counted_tree = 46134;
+var jc_water_captured = 36907200;
+var ranges = [0,1,2,3,4,5];
+var percents = ['100~80', '80~60', '60~40', '40~20', '20~0'];
+
+$('#num_tree').text(jc_counted_tree.toLocaleString());
+$("#total_benefit_tree").text((Math.round((Math.round(jc_counted_tree*67.657)/100))*100).toLocaleString());
+$('#water_captured_tree').text(jc_water_captured.toLocaleString());
+$('#energy_conserved_tree').text((Math.round((Math.round(jc_counted_tree*969.025)/100))*100).toLocaleString());
+$('#co2_removed_tree').text((Math.round((Math.round(jc_counted_tree*454.072)/100))*100).toLocaleString());
+$('#air_improved_tree').text((Math.round((Math.round(jc_counted_tree*1.811)/100))*100).toLocaleString());
+
+
+
 
 // This is about dropbox menus
 var dropbox_making = function(dict_) {
@@ -59,27 +73,56 @@ var renew_info = function(tract) {
         $("#region").text("Jersey City");
         $('#tract_graph').css('display','none');
         $('#jc_graph').css('display','flex');
+        $('#num_tree').text(jc_counted_tree.toLocaleString());
+        $("#total_benefit_tree").text((Math.round((Math.round(jc_counted_tree*67.657)/100))*100).toLocaleString());
+        $('#water_captured_tree').text(tract_filter["storwater_managed"].toLocaleString());
+        $('#energy_conserved_tree').text((Math.round((Math.round(jc_counted_tree*969.025)/100))*100).toLocaleString());
+        $('#co2_removed_tree').text((Math.round((Math.round(jc_counted_tree*454.072)/100))*100).toLocaleString());
+        $('#air_improved_tree').text((Math.round((Math.round(jc_counted_tree*1.811)/100))*100).toLocaleString());
     }
     else{
         $("#region").text("Census Tract "+ tract);
         $('#jc_graph').css('display','none');
         $('#tract_graph').css('display','flex');
         var tract_filter = tract_info[tract];
+        generate_fake(tract);
         chart_clean();
         overall_chart_generating(tract_filter["overall_score"], tract);
         gi_chart_generating(tract_filter["green_score"], tract);
         impervious_chart_generating(tract_filter["imp_percent"],tract);
         flood_chart_generating(tract_filter["flood_score"],tract);
 
-        $('#num_tree').text(tract_filter["treecountestimate"]);
+        $('#num_tree').text(tract_filter["treecountestimate"].toLocaleString());
         $("#total_benefit_tree").text((Math.round((Math.round(tract_filter["treecountestimate"]*67.657)/100))*100).toLocaleString());
         $('#water_captured_tree').text(tract_filter["storwater_managed"].toLocaleString());
         $('#energy_conserved_tree').text((Math.round((Math.round(tract_filter["treecountestimate"]*969.025)/100))*100).toLocaleString());
         $('#co2_removed_tree').text((Math.round((Math.round(tract_filter["treecountestimate"]*454.072)/100))*100).toLocaleString());
         $('#air_improved_tree').text((Math.round((Math.round(tract_filter["treecountestimate"]*1.811)/100))*100).toLocaleString());
     }
+};
 
-
+var generate_fake = function(tract){
+    if((tract%3)===0){
+        $('#Reason').html(recommendations['case1']['reason']);
+        $('#recommended_GI').html(recommendations['case1']['recommendation']);
+        $('#recommended_GI').css('font-size','28px');
+        $('#recommended_GI').css('margin-top','21px');
+        $('#recommended_GI').css('margin-bottom','22px');
+    }
+    else if((tract%3)===1){
+        $('#Reason').text(recommendations['case2']['reason']);
+        $('#recommended_GI').text(recommendations['case2']['recommendation']);
+        $('#recommended_GI').css('font-size','33px');
+        $('#recommended_GI').css('margin-top','35px');
+        $('#recommended_GI').css('margin-bottom','35px');
+    }
+    else{
+        $('#Reason').text(recommendations['case3']['reason']);
+        $('#recommended_GI').text(recommendations['case3']['recommendation']);
+        $('#recommended_GI').css('font-size','33px');
+        $('#recommended_GI').css('margin-top','35px');
+        $('#recommended_GI').css('margin-bottom','35px');
+    }
 };
 
 $("#text_att").click(function () {
