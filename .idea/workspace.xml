@@ -21,11 +21,6 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>park</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -213,7 +208,7 @@
       <workItem from="1575763413490" duration="629000" />
       <workItem from="1575912027885" duration="614000" />
       <workItem from="1575914582767" duration="7667000" />
-      <workItem from="1575942382050" duration="4973000" />
+      <workItem from="1575942382050" duration="10330000" />
     </task>
     <servers />
   </component>
@@ -253,6 +248,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1515" height="210" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1575062708593" />
+    <state x="408" y="27" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1575985564531">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="408" y="27" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1575985564531" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1575045748022">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

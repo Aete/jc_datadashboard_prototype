@@ -1,8 +1,8 @@
 // this part is for dropdown menu
 var drop_click = 0;
 var drop2_click = 0;
-var jc_counted_tree = 46134;
-var jc_water_captured = 36907200;
+var jc_counted_tree = 259758;
+var jc_water_captured = 197416000;
 var ranges = [0,1,2,3,4,5];
 var percents = ['100~80', '80~60', '60~40', '40~20', '20~0'];
 
@@ -75,10 +75,12 @@ var renew_info = function(tract) {
         $('#jc_graph').css('display','flex');
         $('#num_tree').text(jc_counted_tree.toLocaleString());
         $("#total_benefit_tree").text((Math.round((Math.round(jc_counted_tree*67.657)/100))*100).toLocaleString());
-        $('#water_captured_tree').text(tract_filter["storwater_managed"].toLocaleString());
+        $('#water_captured_tree').text((jc_water_captured).toLocaleString());
         $('#energy_conserved_tree').text((Math.round((Math.round(jc_counted_tree*969.025)/100))*100).toLocaleString());
         $('#co2_removed_tree').text((Math.round((Math.round(jc_counted_tree*454.072)/100))*100).toLocaleString());
         $('#air_improved_tree').text((Math.round((Math.round(jc_counted_tree*1.811)/100))*100).toLocaleString());
+        $('#Reason').text('Please click your area');
+        $('#recommended_GI').text('---');
     }
     else{
         $("#region").text("Census Tract "+ tract);
@@ -151,6 +153,55 @@ var value_range = {
 var renew_info_2 = function(att_clicked) {
     $("#attribute").text(att_clicked);
     change_grid_layer(att_clicked);
+    console.log(att_clicked);
+    if(att_clicked==='Overall Score'){
+        $('.score').css('display','flex');
+        $('.percent').css('display','none');
+        $('#legend_1c').css('display','flex');
+        $('#legend').css('height','190px');
+        $('#leg_0').attr('src','images/overall/0.png');
+        $('#leg_1').attr('src','images/overall/1.png');
+        $('#leg_2').attr('src','images/overall/2.png');
+        $('#leg_3').attr('src','images/overall/3.png');
+        $('#leg_4').attr('src','images/overall/4.png');
+        $('#leg_5').attr('src','images/overall/5.png');
+    }
+    else if(att_clicked==='Flood Risk'){
+        $('.score').css('display','flex');
+        $('.percent').css('display','none');
+        $('#legend_1c').css('display','flex');
+        $('#legend').css('height','190px');
+        $('#leg_0').attr('src','images/flood/0.png');
+        $('#leg_1').attr('src','images/flood/1.png');
+        $('#leg_2').attr('src','images/flood/2.png');
+        $('#leg_3').attr('src','images/flood/3.png');
+        $('#leg_4').attr('src','images/flood/4.png');
+        $('#leg_5').attr('src','images/flood/5.png');
+    }
+    else if(att_clicked==='Green View Score'){
+        $('.score').css('display','flex');
+        $('.percent').css('display','none');
+        $('#legend_1c').css('display','flex');
+        $('#legend').css('height','190px');
+        $('#leg_0').attr('src','images/green/0.png');
+        $('#leg_1').attr('src','images/green/1.png');
+        $('#leg_2').attr('src','images/green/2.png');
+        $('#leg_3').attr('src','images/green/3.png');
+        $('#leg_4').attr('src','images/green/4.png');
+        $('#leg_5').attr('src','images/green/5.png');
+    }
+    else{
+        $('.score').css('display','none');
+        $('.percent').css('display','flex');
+        $('#legend_1c').css('display','none');
+        $('#legend').css('height','160px');
+        $('#leg_1').attr('src','images/impervious/0.png');
+        $('#leg_2').attr('src','images/impervious/1.png');
+        $('#leg_3').attr('src','images/impervious/2.png');
+        $('#leg_4').attr('src','images/impervious/3.png');
+        $('#leg_5').attr('src','images/impervious/4.png');
+
+    }
 };
 
 // this part is for take action animation

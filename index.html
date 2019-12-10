@@ -31,12 +31,12 @@
                         <p>Green View Score</p>
                     </div>
                     <div id="legend">
-                        <div style="display:flex; flex-direction:row; align-items:center;"><img src="images/overall/0.png" style="height:15px; margin-right:18px;"><h5><span class="score">0 &nbsp; (Bad...)</span><span class="percent">0</span></h5></div>
-                        <div style="display:flex; flex-direction:row; align-items:center;"><img src="images/overall/1.png" style="height:15px; margin-right:18px;"><h5><span class="score">1 &nbsp;</span><span class="percent">0</span></h5></div>
-                        <div style="display:flex; flex-direction:row; align-items:center;"><img src="images/overall/2.png" style="height:15px; margin-right:18px;"><h5><span class="score">2 &nbsp;</span><span class="percent">0</span></h5></div>
-                        <div style="display:flex; flex-direction:row; align-items:center;"><img src="images/overall/3.png" style="height:15px; margin-right:18px;"><h5><span class="score">3 &nbsp;</span><span class="percent">0</span></h5></div>
-                        <div style="display:flex; flex-direction:row; align-items:center;"><img src="images/overall/4.png" style="height:15px; margin-right:18px;"><h5><span class="score">4 &nbsp;</span><span class="percent">0</span></h5></div>
-                        <div style="display:flex; flex-direction:row; align-items:center;"><img src="images/overall/5.png" style="height:15px; margin-right:18px;"><h5><span class="score">5 &nbsp; (Good!)</span><span class="percent">90~100%</span></h5></div>
+                        <div id='legend_1c' style="display:flex; flex-direction:row; align-items:center;"><img id='leg_0' src="images/overall/0.png" style="height:15px; margin-right:18px;"><h5><span class="score">0 &nbsp; (Bad...)</span><span style="display:none;">Seunggyun</span></h5></div>
+                        <div style="display:flex; flex-direction:row; align-items:center;"><img id='leg_1' src="images/overall/1.png" style="height:15px; margin-right:18px;"><h5><span class="score">1 &nbsp;</span><span class="percent">80~100%</span></h5></div>
+                        <div style="display:flex; flex-direction:row; align-items:center;"><img id='leg_2' src="images/overall/2.png" style="height:15px; margin-right:18px;"><h5><span class="score">2 &nbsp;</span><span class="percent">60~80%</span></h5></div>
+                        <div style="display:flex; flex-direction:row; align-items:center;"><img id='leg_3' src="images/overall/3.png" style="height:15px; margin-right:18px;"><h5><span class="score">3 &nbsp;</span><span class="percent">40~60%</span></h5></div>
+                        <div style="display:flex; flex-direction:row; align-items:center;"><img id='leg_4' src="images/overall/4.png" style="height:15px; margin-right:18px;"><h5><span class="score">4 &nbsp;</span><span class="percent">20~40%</span></h5></div>
+                        <div style="display:flex; flex-direction:row; align-items:center;"><img id='leg_5' src="images/overall/5.png" style="height:15px; margin-right:18px;"><h5><span class="score">5 &nbsp; (Good!)</span><span class="percent">0~20%</span></h5></div>
                         <a href='https://www.opentreemap.org/jctrees/map/' style="display:none; width:100%; color:#848484; margin-top:5px; font-size:12px; text-align: right;">How did we calculate? &nbsp &#9654;</a>
 
                     </div>
@@ -58,7 +58,17 @@
 
                 <div id='chart_info'>
                     <div id ='jc_graph'>
+                        <div id="first_row_jc">
+                            <div id="Overall_jc" style="display:flex; flex-direction: column">
+                                <h4 style="margin:15px 0 10px 0;">Overall</h4>
+                                <div id="overall_graph_jc" class = 'barchart'></div>
+                            </div>
+                            <div id="IAR">
+                                <h4 style="margin:15px 0 10px 0;">Impervious Area Ratio (%)</h4>
+                                <div id="impervious_graph_jc"  class = 'barchart'></div>
+                            </div>
 
+                        </div>
                     </div>
                     <div id="tract_graph">
                         <div id="first_row">
@@ -106,8 +116,8 @@
                     <div id="action_content">
                         <div id="recommendation">
                             <h4 style = 'font-size:17px; padding-left: 15px; margin: 8px 0 8px 0;'>Recommended Green Infrastructure for your area</h4>
-                            <p id="Reason"> </p>
-                            <h3 id="recommended_GI"></h3>
+                            <p id="Reason"> Please click your area</p>
+                            <h3 id="recommended_GI" style="font-size:35px; margin-top:35px; margin-bottom:35px;">-----</h3>
                             <p style="display:block; width:100%; color:#848484; margin-top:5px; font-size:12px; text-align: right;">It is a example of our suggestion because some data were not available.</p>
 
                         </div>

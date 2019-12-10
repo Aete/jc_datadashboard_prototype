@@ -6,7 +6,7 @@ var palette = {
 var map = new mapboxgl.Map({
     container: 'map',
     style: palette['light']['mapStyle'],
-    center: [-74.070000, 40.715535],
+    center: [-74.070000, 40.722535],
     zoom: 12
 });
 
@@ -105,7 +105,7 @@ map.addControl(new mapboxgl.NavigationControl(), 'top-left');
 var url_neighborhood = 'js/data/neighborhoods.geojson';
 var url_park = 'js/data/park.geojson';
 var url_census = 'js/data/tracts.geojson';
-var url_jc = 'js/data/jerseycity.json';
+var url_jc = 'js/data/jco.geojson';
 var url_grid = 'js/data/grid_final.geojson';
 var hoverNeighborhoodId =  null;
 var clicked_feature = null;
@@ -122,7 +122,6 @@ map.on('load', function () {
     map.addSource('neighborhood', { type: 'geojson', data: url_neighborhood, 'generateId': true});
     map.addSource('census', { type: 'geojson', data: url_census, 'generateId': true});
     map.addSource('grid', { type: 'geojson', data: url_grid, 'generateId': true});
-
     map.addSource('selected_tract',{'type': 'geojson','data': url_jc});
 
 
@@ -266,7 +265,7 @@ var highlight_jc=function(){
         }
     });
     map.flyTo({
-        center: [-74.070000, 40.715535],
+        center: [-74.070000, 40.722535],
         zoom: 12
     });
 };
@@ -322,7 +321,11 @@ var change_grid_layer=function(attr){
                     ['linear'],
                     ['get', 'flood_score'],
                     0, '#0D47A1',
-                    5, '#FFFFFF'
+                    1, '#1976D2',
+                    2, '#2196F3',
+                    3, '#64B5F6',
+                    4, '#BBDEFB',
+                    5, '#FFFFFF',
                 ],
                 "fill-opacity": 0.7
             }
@@ -345,6 +348,10 @@ var change_grid_layer=function(attr){
                     ['linear'],
                     ['get', 'greenscore'],
                     0, '#FFFFF2',
+                    1,'#C8E6C9',
+                    2,'#81C784',
+                    3,'#4CAF50',
+                    4,'#388E3C',
                     5, '#1B5B20'
                 ],
                 "fill-opacity": 0.7
@@ -367,13 +374,12 @@ var change_grid_layer=function(attr){
                     ['linear'],
                     ['get', 'imp_score'],
                     0, '#212121',
-                    1, '#EEEEEE',
-                    2, '#BDBDBD',
+                    2, '#616161',
                     3, '#9E9E9E',
-                    4, '#616161',
+                    4, '#E0E0E0',
                     5,'#FFFFFE'
                 ],
-                "fill-opacity": 0.8
+                "fill-opacity": 0.7
             }
         },'censusTract-border');
     }
