@@ -1,0 +1,87 @@
+@media screen and (max-height : 750px){
+    #graphs{
+        height:100%;
+        overflow-y:scroll;
+    }
+
+    #jc_graph{
+        height:400px;
+    }
+
+    #tract_graph{
+        height:400px;
+    }
+    #action{
+        display:none;
+    }
+
+    #recommendation{
+        border-top:dashed 1px #212121;
+    }
+    #tree_benefit{
+        height:300px;
+    }
+
+    #tree_benefit>a{
+        margin-top:40px;
+
+    }
+
+    #recommended_GI{
+        margin-top:45px;
+        margin-bottom:45px;
+    }
+}
+
+@media screen and (orientation: portrait){
+    #graphs{
+        height:100%;
+        overflow-y:scroll;
+    }
+
+    #jc_graph{
+        height:400px;
+    }
+
+    #tract_graph{
+        height:400px;
+    }
+
+    #action{
+        display:none;
+    }
+    #tree_benefit{
+        height:300px;
+    }
+
+    #tree_benefit{
+        height:300px;
+    }
+
+    #tree_benefit>a{
+        margin-top:40px;
+
+    }
+
+    #recommended_GI{
+        margin-top:45px;
+        margin-bottom:45px;
+    }
+    #graphs{
+        height:100%;
+        overflow-y:scroll;
+    }
+    #action{
+        display:none;
+    }
+
+    #recommendation{
+        border-top:dashed 1px #212121;
+        height:220px;
+    }
+
+    #tree_benefit{
+        height:300px;
+    }
+
+}

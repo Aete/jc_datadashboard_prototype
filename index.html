@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Prototype of JC Green Infra Databoard</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.0/mapbox-gl.css' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
@@ -59,26 +60,51 @@
                 <div id='chart_info'>
                     <div id ='jc_graph'>
                         <div id="first_row_jc">
-                            <div id="Overall_jc" style="display:flex; flex-direction: column">
-                                <h4 style="margin:15px 0 0 0;">Overall</h4>
-                                <h3 id="jc_avg_ovr" style="font-size:60px;text-align: center; margin-top: 40px;">1.85</h3>
-                            </div>
-                            <div id="IAR">
-                                <h4 style="margin:15px 0 10px 0;">Impervious Area Ratio (%)</h4>
-                                <h3 id="jc_avg_imp" style="font-size:60px;text-align: center; margin-top: 40px;">57</h3>
-                            </div>
-
                         </div>
                         <div id="second_row_jc">
-                            <h4>Census tracts</h4>
-                            <p>Tract 56 (Overall score: 0, Impervious Area Ratio: 92.85%)</p>
-                            <p>Tract 20 (Overall score: 1, Impervious Area Ratio: 95.13%)</p>
-                            <p>Tract 2 (Overall score: 1, Impervious Area Ratio: 94.47%)</p>
-                            <p>Tract 12.01 (Overall score: 1, Impervious Area Ratio: 94.23%)</p>
-                            <p>Tract 7 (Overall score: 1, Impervious Area Ratio: 93.31%)</p>
+                            <h4>Census tracts needing most improvement</h4>
+
+                            <h5>Tract 56</h5>
+                            <div style="display:flex; flex-directin:row;">
+                            <p>· &nbsp;  Overall score: 0
+                            <br>· &nbsp; Impervious Area Ratio: 92.85%</p>
+                            <p>· &nbsp;  Greenview score: 0
+                            <br>· &nbsp; Flood risk: 1</p>
+                            </div>
+                            <h5>Tract 20</h5>
+                            <div style="display:flex; flex-directin:row;">
+                            <p>· &nbsp;  Overall score: 1
+                            <br>· &nbsp; Impervious Area Ratio: 95.13%</p>
+                                <p>· &nbsp;  Greenview score: 0
+                                    <br>· &nbsp; Flood risk: 3</p>
+                            </div>
+
+                            <h5>Tract 2</h5>
+                            <div style="display:flex; flex-directin:row;">
+                            <p>·   Overall score: 1
+                            <br>·  Impervious Area Ratio: 94.47%</p>
+                                <p>· &nbsp;  Greenview score: 0
+                                    <br>· &nbsp; Flood risk: 3</p>
+                            </div>
+
+                            <h5>Tract 12.01</h5>
+                            <div style="display:flex; flex-directin:row;">
+                            <p>·   Overall score: 1
+                            <br>·  Impervious Area Ratio: 94.23%</p>
+                                <p>· &nbsp;  Greenview score: 0
+                                    <br>· &nbsp; Flood risk: 3</p>
+                            </div>
+
+                            <h5>Tract 7</h5>
+                            <div style="display:flex; flex-directin:row;">
+                            <p>·   Overall score: 1
+                            <br>·  Impervious Area Ratio: 93.31%</p>
+                                <p>·  &nbsp;  Greenview score: 0
+                                    <br>·  &nbsp; Flood risk: 3</p>
+                            </div>
 
                         </div>
-                        <a href='https://www.opentreemap.org/jctrees/map/' style="display:block; width:100%; color:#848484; margin-top:5px; font-size:12px; text-align: right;">How did we calculate? &nbsp &#9654;</a>
+                        <a href='calculations.pdf'  target="_blank" style="display:block; width:100%; color:#848484; margin-top:5px; font-size:12px; text-align: right;">How did we calculate? &nbsp &#9654;</a>
 
                     </div>
                     <div id="tract_graph">
@@ -104,18 +130,18 @@
 
                         </div>
 
-                        <a href='https://www.opentreemap.org/jctrees/map/' style="display:block; width:100%; color:#848484; margin-top:5px; font-size:12px; text-align: right;">How did we calculate? &nbsp &#9654;</a>
+                        <a href='calculations.pdf'  target="_blank" style="display:block; width:100%; color:#848484; margin-top:5px; font-size:12px; text-align: right;">How did we calculate? &nbsp &#9654;</a>
 
                     </div>
 
                     <div id="tree_benefit">
                             <h4 style="color:#33691e; ">Estimated Number of Trees: <span id="num_tree"></span></h4>
-                            <h4 style="font-weight:300; ">&#183; &nbsp Total annual benefits ($): <span id="total_benefit_tree"></span></h4>
                             <h4 style="font-weight:300;">&#183; &nbsp Stormwater Captured (gal/year): <span id="water_captured_tree"></span></h4>
+                            <h4 style="font-weight:300; ">&#183; &nbsp Total annual benefits ($): <span id="total_benefit_tree"></span></h4>
                             <h4 style="font-weight:300;">&#183; &nbsp Energy conserved (kwh/year): <span id="energy_conserved_tree"></span></h4>
                             <h4 style="font-weight:300;">&#183; &nbsp Air quality improved (lbs/year): <span id="air_improved_tree"></span></h4>
                             <h4 style="font-weight:300;">&#183; &nbsp CO2 removed (lbs/year): <span id="co2_removed_tree"></span></h4>
-                            <a href='https://www.opentreemap.org/jctrees/map/' style="display:block; width:100%; color:#848484; font-size:12px; text-align: right;">Using average values of trees in Open Tree Map Jersey City &nbsp &#9654;</a>
+                            <a href='https://www.opentreemap.org/jctrees/map/' target="_blank" style="display:block; width:100%; color:#848484; font-size:12px; text-align: right;">We used average benefits of trees in Open Tree Map Jersey City &nbsp &#9654;</a>
                     </div>
 
                     <div id="action">
@@ -138,7 +164,7 @@
                             <p style="padding-left:10px;">- The nearest park is <span id="nearest_park"> --- </span></p>
                             <p style="padding-left:10px;">- Distance from the park is <span id="distance"> --- </span> </p>
 
-                            <a href="http://jcparks.org/how-to-start-a-park-group/" style="text-decoration: none; color:#212121;">
+                            <a href="http://jcparks.org/how-to-start-a-park-group/" style="text-decoration: none; color:#212121;" target="_blank">
                                 <div style="display:flex; justify-content:center; width:100%">
                                     <div id='improve_button' style="border:1px solid #424242; height:40px; width: 40%; display: flex; align-items: center; justify-content: center;" >
                                             <p style="text-align:center; margin:0 0 0 0;">Let's Improve</p>
@@ -148,7 +174,7 @@
 
                         </div>
                         <div id="buttons">
-                            <a href="https://seeclickfix.com/web_portal/2k1ssvSpae6TaFxzH6eMTSUr/issues/map?device_os=Portal3-MapWidget&lat=40.7152660944628&lng=-74.068731&max_lat=40.7375024965684&max_lng=-74.01995658874513&min_lat=40.69300399738386&min_lng=-74.1174602508545&zoom=14",target="_blank">
+                            <a target = '_blank' href="https://seeclickfix.com/web_portal/2k1ssvSpae6TaFxzH6eMTSUr/issues/map?device_os=Portal3-MapWidget&lat=40.7152660944628&lng=-74.068731&max_lat=40.7375024965684&max_lng=-74.01995658874513&min_lat=40.69300399738386&min_lng=-74.1174602508545&zoom=14",target="_blank">
                             <div id="complaints">
                                 <h4 class='button' style = 'font-size:17px; margin: 8px 0 8px 0;'>Send Opinions & Complaints</h4>
                             </div>

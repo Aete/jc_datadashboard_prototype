@@ -313,16 +313,21 @@ g>text{
     padding-top:5px;
     flex-direction: column;
     margin-bottom:3px;
-    border-top: 1px dashed #424242;
 }
 
 #second_row_jc>h4{
     margin:10px 0 10px 0;
 }
 
-#second_row_jc>p{
+#second_row_jc>h5{
+    margin: 10px 0 0 0;
+}
+
+#second_row_jc>div>p{
+    width:220px;
     font-size: 13px;
-    margin:7px 0 7px 0;
+    margin:5px 0 5px 0;
+    display:inline;
 }
 
 

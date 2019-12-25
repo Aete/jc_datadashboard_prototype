@@ -68,7 +68,6 @@ var chart_clean = function(){
 };
 
 var renew_info = function(tract) {
-    console.log(tract);
     if(tract === "JC"){
         $("#region").text("Jersey City");
         $('#tract_graph').css('display','none');
@@ -83,14 +82,16 @@ var renew_info = function(tract) {
         $('#recommended_GI').text('---');
     }
     else{
+        console.log(tract);
         $("#region").text("Census Tract "+ tract);
         $('#jc_graph').css('display','none');
         $('#tract_graph').css('display','flex');
         var tract_filter = tract_info[tract];
+        console.log(tract_filter);
         generate_fake(tract);
         chart_clean();
-        overall_chart_generating(tract_filter["overall_score"], tract);
-        gi_chart_generating(tract_filter["green_score"], tract);
+        overall_chart_generating(tract_filter["overallscore"], tract);
+        gi_chart_generating(tract_filter["greenscore"], tract);
         impervious_chart_generating(tract_filter["imp_percent"],tract);
         flood_chart_generating(tract_filter["flood_score"],tract);
 

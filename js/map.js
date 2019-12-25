@@ -241,8 +241,8 @@ var highlight = function(feature){
     });
     map.flyTo({
         center: [
-            tract_info[feature]["center_lng"],
-            tract_info[feature]["center_lat"]],
+            tract_info_previous[feature]["center_lng"],
+            tract_info_previous[feature]["center_lat"]],
         zoom: 14
     });
 };
